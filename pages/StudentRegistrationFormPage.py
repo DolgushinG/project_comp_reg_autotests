@@ -1,6 +1,6 @@
 import time
 
-from locators.StudentRegistrationFormLocators import RegistrationForm
+from locators.RegistrationFormLocators import RegistrationForm
 from pages.BasePage import BasePage
 
 
@@ -30,12 +30,9 @@ class StudentRegistrationFormPage(BasePage):
     def fill_team(self, last_name: str) -> None:
         self._fill_field(RegistrationForm.team, last_name)
 
-    def fill_password(self, last_name: str) -> None:
-        self._fill_field(RegistrationForm.password, last_name)
     def fill_confirm_password(self, last_name: str) -> None:
         self._fill_field(RegistrationForm.confirm_password, last_name)
-    def fill_email(self, email: str) -> None:
-        self._fill_field(RegistrationForm.email, email)
+
 
     def click_checkbox_gender_male(self) -> None:
         self._click(RegistrationForm.gender_checkbox_1)
@@ -69,15 +66,13 @@ class StudentRegistrationFormPage(BasePage):
         self._wait_element(RegistrationForm.male)
         self._wait_and_click(RegistrationForm.male)
 
-    def click_btn_submit(self) -> None:
-        self._wait_element(RegistrationForm.btn_submit)
-        self._wait_and_click(RegistrationForm.btn_submit)
+
 
     def verify_confirm_form(self) -> None:
         time.sleep(2)
         assert self._element_visible(RegistrationForm.modal_submitting_form)
 
-    def verify_profile(self, ) -> None:
+    def verify_profile(self) -> None:
         text = self._get_text(RegistrationForm.nav_profile)
         assert 'ПРОФИЛЬ' == text, f"EXP - ПРОФИЛЬ, REAL - {text}"
 

@@ -4,6 +4,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import ElementClickInterceptedException
 
+from locators.RegistrationFormLocators import RegistrationForm
+
+
 class BasePage:
     TIME = 15
 
@@ -63,3 +66,15 @@ class BasePage:
             return element.is_displayed()
         except NoSuchElementException:
             return False
+
+    def fill_email(self, email: str) -> None:
+        self._fill_field(RegistrationForm.email, email)
+
+    def fill_password(self, last_name: str) -> None:
+        self._fill_field(RegistrationForm.password, last_name)
+
+    def verify_header_profile(self):
+        assert self._element_visible(RegistrationForm.nav_header_profile_image)
+
+    def click_btn_submit(self) -> None:
+        self._wait_and_click(RegistrationForm.btn_submit)

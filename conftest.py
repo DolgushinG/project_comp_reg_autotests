@@ -1,4 +1,6 @@
+import os
 import time
+from dataclasses import dataclass
 from datetime import datetime
 
 import pytest
@@ -7,7 +9,10 @@ from selenium import webdriver
 import tools
 from config.drivers import get_driver
 from config.options import get_options
-from constants import OUTPUT_ROOT
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+OUTPUT_ROOT = os.path.join(PROJECT_ROOT, 'tests', 'output')
+DATA_ROOT = os.path.join(PROJECT_ROOT, 'data')
+
 
 BROWSER_NAME = ''
 
@@ -61,3 +66,12 @@ def take_screenshot(driver, originalname):
 
 def pytest_collection_modifyitems():
     tools.remove_test_dir(OUTPUT_ROOT)
+@pytest.fixture(scope='function')
+def get_user_request(request):
+    user = User()
+    request.cls.user = user
+    return user
+
+
+
+
