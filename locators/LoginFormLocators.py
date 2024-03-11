@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class RegistrationForm:
+class LoginFormLocators:
     first_name = (By.ID, 'firstname')
     last_name = (By.ID, 'lastname')
     team = (By.ID, 'team')
