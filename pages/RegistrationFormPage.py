@@ -4,7 +4,7 @@ from locators.RegistrationFormLocators import RegistrationForm
 from pages.BasePage import BasePage
 
 
-class StudentRegistrationFormPage(BasePage):
+class RegistrationFormPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
@@ -66,7 +66,10 @@ class StudentRegistrationFormPage(BasePage):
         self._wait_element(RegistrationForm.male)
         self._wait_and_click(RegistrationForm.male)
 
-
+    def click_btn_submit(self) -> None:
+        self.scroll_down()
+        time.sleep(1)
+        self._wait_and_click(RegistrationForm.btn_submit)
 
     def verify_confirm_form(self) -> None:
         time.sleep(2)

@@ -6,12 +6,10 @@ from constants import URL, DEFAULT_USER
 from pages.EventPage import EventPage
 from pages.LoginFormPage import LoginFormPage
 from pages.ProfilePage import ProfilePage
-from pages.StudentRegistrationFormPage import StudentRegistrationFormPage
 
 
 @pytest.mark.usefixtures("driver")
 class TestEvent:
-
     def test_open_event(self):
         login_form = EventPage(self.driver)
         login_form._go_to_url(f'{URL}/')

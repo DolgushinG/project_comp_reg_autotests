@@ -5,7 +5,6 @@ import pytest
 from constants import URL, DEFAULT_USER
 from pages.LoginFormPage import LoginFormPage
 from pages.ProfilePage import ProfilePage
-from pages.StudentRegistrationFormPage import StudentRegistrationFormPage
 
 
 @pytest.mark.usefixtures("driver")

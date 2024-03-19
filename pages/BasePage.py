@@ -1,9 +1,12 @@
+import time
+
 from selenium.common import NoSuchElementException, StaleElementReferenceException, TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import ElementClickInterceptedException
 
+from locators.AdminEventPageLocators import AdminEventPageLocators
 from locators.RegistrationFormLocators import RegistrationForm
 
 
@@ -50,8 +53,10 @@ class BasePage:
     def _go_to_url(self, url: str) -> None:
         self.driver.get(url)
 
-    def _fill_field(self, element: tuple, text: str):
+    def _fill_field(self, element: tuple, text: str, clear=True):
         el = self._wait_element(element)
+        if clear:
+            el.clear()
         el.send_keys(text)
 
     def _press_key(self, element: tuple, keys):
@@ -59,6 +64,28 @@ class BasePage:
 
     def _get_text(self, element: tuple):
         return self._wait_element(element).text
+
+    def scroll_down(self):
+        # time.sleep(1)
+        pre_scroll_height = self.driver.execute_script('return document.body.scrollHeight;')
+        run_time, max_run_time = 0, 1
+        while True:
+            iteration_start = time.time()
+            # Scroll webpage, the 100 allows for a more 'aggressive' scroll
+            self.driver.execute_script('window.scrollTo(0, 100*document.body.scrollHeight);')
+
+            post_scroll_height = self.driver.execute_script('return document.body.scrollHeight;')
+
+            scrolled = post_scroll_height != pre_scroll_height
+            timed_out = run_time >= max_run_time
+
+            if scrolled:
+                run_time = 0
+                pre_scroll_height = post_scroll_height
+            elif not scrolled and not timed_out:
+                run_time += time.time() - iteration_start
+            elif not scrolled and timed_out:
+                break
 
     def _element_visible(self, element: tuple):
         try:
@@ -70,8 +97,8 @@ class BasePage:
     def fill_email(self, email: str) -> None:
         self._fill_field(RegistrationForm.email, email)
 
-    def fill_password(self, last_name: str) -> None:
-        self._fill_field(RegistrationForm.password, last_name)
+    def fill_password(self, password: str) -> None:
+        self._fill_field(RegistrationForm.password, password)
 
     def verify_header_profile(self):
         assert self._element_visible(RegistrationForm.nav_header_profile_image)
