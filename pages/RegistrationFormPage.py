@@ -21,8 +21,8 @@ class RegistrationFormPage(BasePage):
     def fill_last_name(self, last_name: str) -> None:
         self._fill_field(RegistrationForm.last_name, last_name)
 
-    def fill_birthday(self, last_name: str) -> None:
-        self._fill_field(RegistrationForm.birthday, last_name)
+    def fill_birthday(self, birthday: str) -> None:
+        self._fill_field(RegistrationForm.birthday, birthday)
 
     def fill_city(self, last_name: str) -> None:
         self._fill_field(RegistrationForm.city, last_name)

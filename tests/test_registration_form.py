@@ -19,7 +19,7 @@ class TestRegistrationForm:
         reg_form.fill_birthday(get_user.birthday)
         reg_form.fill_city(get_user.city)
         reg_form.fill_team(get_user.team)
-        reg_form.fill_email(DEFAULT_USER.email)
+        reg_form.fill_email(get_user.email)
         reg_form.fill_email(get_user.email)
         reg_form.fill_password(get_user.password)
         reg_form.fill_confirm_password(get_user.password)

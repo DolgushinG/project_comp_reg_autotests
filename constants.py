@@ -2,9 +2,11 @@ import os
 from dataclasses import dataclass
 
 import tools
+username = "climb" #stands for !@user
+password = "tester" #stands for ^&pass
+webpage = "climbing-events.ru"
 
-URL = 'http://127.0.0.1:8000'
-
+URL = 'http://{}:{}@{}'.format(username, password, webpage)
 
 @dataclass
 class User:
@@ -12,7 +14,7 @@ class User:
     lastname: str = tools.random_word(4, 8)
     email: str = tools.get_email()
     password: str = "password"
-    birthday: str = "password"
+    birthday: str = "20202905"
     team: str = "team"
     city: str = "Москва"
     gender: str = "Male"
