@@ -9,7 +9,9 @@ from selenium import webdriver
 import tools
 from config.drivers import get_driver
 from config.options import get_options
-from constants import User
+from constants import User, URL, DEFAULT_USER
+from pages.LoginFormPage import LoginFormPage
+from pages.ProfilePage import ProfilePage
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 OUTPUT_ROOT = os.path.join(PROJECT_ROOT, 'tests', 'output')
@@ -73,7 +75,16 @@ def get_user_request(request):
     user = User()
     request.cls.user = user
     return user
-
+@pytest.fixture()
+def login(request):
+    login_form = LoginFormPage(request.cls.driver)
+    login_form._go_to_url(f'{URL}/login')
+    login_form.fill_email(DEFAULT_USER.email)
+    login_form.fill_password(DEFAULT_USER.password)
+    login_form.click_btn_submit()
+    login_form.verify_header_profile()
+    profile_page = ProfilePage(request.cls.driver)
+    profile_page._go_to_url(f'{URL}/profile')
 
 
 

@@ -14,7 +14,7 @@ class TestLoginForm:
         login_form._go_to_url(f'{URL}/login')
         login_form.fill_email(DEFAULT_USER.email)
         login_form.fill_password(DEFAULT_USER.password)
-        login_form.click_btn_submit()
+        login_form.click_btnw_submit()
         login_form.verify_header_profile()
 
 

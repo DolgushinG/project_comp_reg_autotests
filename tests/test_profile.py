@@ -9,15 +9,8 @@ from pages.ProfilePage import ProfilePage
 
 @pytest.mark.usefixtures("driver")
 class TestProfileForm:
-    def test_navigation_profile(self):
-        login_form = LoginFormPage(self.driver)
-        login_form._go_to_url(f'{URL}/login')
-        login_form.fill_email(DEFAULT_USER.email)
-        login_form.fill_password(DEFAULT_USER.password)
-        login_form.click_btn_submit()
-        login_form.verify_header_profile()
+    def test_navigation_profile(self, login):
         profile_page = ProfilePage(self.driver)
-        profile_page._go_to_url(f'{URL}/profile')
         profile_page.click_nav_profile()
         profile_page.verify_profile()
         profile_page.click_nav_events()
@@ -27,5 +20,32 @@ class TestProfileForm:
         profile_page.click_nav_edit()
         profile_page.verify_edit()
 
-
+    def test_edit_profile(self, login):
+        profile_page = ProfilePage(self.driver)
+        profile_page.click_nav_profile()
+        profile_page.verify_profile()
+        profile_page.click_nav_edit()
+        profile_page.verify_edit()
+        info_before = profile_page.get_info_profile()
+        profile_page.fill_firstname("tester1")
+        profile_page.fill_lastname("tester1")
+        profile_page.fill_team("tester1")
+        profile_page.fill_gender()
+        profile_page.fill_birthday("1990-05-29")
+        profile_page.fill_city("testeros1")
+        profile_page.fill_sport_category()
+        profile_page.fill_email("Tester@tester.ru")
+        profile_page.click_btn_save()
+        time.sleep(4)
+        info_after = profile_page.get_info_profile()
+        assert info_before != info_after
+        profile_page.fill_firstname("tester")
+        profile_page.fill_lastname("tester")
+        profile_page.fill_team("tester")
+        profile_page.fill_gender()
+        profile_page.fill_birthday("1990-05-29")
+        profile_page.fill_city("testeros")
+        profile_page.fill_sport_category()
+        profile_page.fill_email("Tester@tester.ru")
+        profile_page.click_btn_save()
 

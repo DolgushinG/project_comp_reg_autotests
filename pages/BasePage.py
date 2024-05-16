@@ -16,7 +16,9 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
-    def _get_attribute(self, element: tuple, attribute: str):
+    def _get_attribute(self, element: tuple, attribute: str, wait=False):
+        if wait:
+            return WebDriverWait(self.driver, self.TIME).until(EC.presence_of_element_located(element)).get_attribute(attribute)
         return self.driver.find_element(*element).get_attribute(attribute)
 
     def _wait_and_click(self, element: tuple):
