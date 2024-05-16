@@ -4,9 +4,9 @@ from dataclasses import dataclass
 import tools
 username = "climb" #stands for !@user
 password = "tester" #stands for ^&pass
-webpage = "climbing-events.ru"
+webpage = "stage-dev.climbing-events.ru"
 
-URL = 'http://{}:{}@{}'.format(username, password, webpage)
+URL = f'https://{webpage}'
 
 @dataclass
 class User:

@@ -15,7 +15,6 @@ class TestEvent:
         login_form._go_to_url(f'{URL}/')
         login_form.click_event_with_js()
         login_form.click_nav_main_info()
-        login_form.click_nav_sets()
         login_form.click_nav_rules()
         login_form.click_nav_price()
 

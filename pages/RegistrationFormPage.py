@@ -33,7 +33,8 @@ class RegistrationFormPage(BasePage):
     def fill_confirm_password(self, last_name: str) -> None:
         self._fill_field(RegistrationForm.confirm_password, last_name)
 
-
+    def click_checkbox_accept_terms(self):
+        self._click(RegistrationForm.terms_checkbox)
     def click_checkbox_gender_male(self) -> None:
         self._click(RegistrationForm.gender_checkbox_1)
 

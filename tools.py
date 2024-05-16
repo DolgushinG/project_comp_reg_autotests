@@ -25,4 +25,4 @@ def random_word(min_len, max_len, first_letter="", capitalized=True):
     return word
 
 def get_email():
-    return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(5)) + '@mstg.ru'
+    return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(5)) + '@gmail.com'

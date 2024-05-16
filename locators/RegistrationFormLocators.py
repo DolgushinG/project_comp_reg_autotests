@@ -7,6 +7,7 @@ class RegistrationForm:
     team = (By.ID, 'team')
     password = (By.ID, 'password')
     confirm_password = (By.ID, 'password_confirmation')
+    terms_checkbox = (By.ID, 'acceptTerms')
     birthday = (By.ID, 'birthday')
     gender = (By.ID, 'gender')
     male = (By.ID, 'male')

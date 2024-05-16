@@ -44,6 +44,12 @@ class BasePage:
             msg = f'Element not found, element: "{element}"'
             raise NoSuchElementException(msg)
 
+    def _try_wait_element(self, element: tuple):
+        try:
+            return WebDriverWait(self.driver, self.TIME).until(EC.presence_of_element_located(element))
+        except TimeoutException:
+            return False
+
     def _elements_presenter(self, element: tuple) -> bool:
         return bool(len(self.driver.find_elements(*element)))
 
