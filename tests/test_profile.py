@@ -5,6 +5,7 @@ import pytest
 from constants import URL, DEFAULT_USER
 from pages.LoginFormPage import LoginFormPage
 from pages.ProfilePage import ProfilePage
+from tools import random_word
 
 
 @pytest.mark.usefixtures("driver")
@@ -27,12 +28,12 @@ class TestProfileForm:
         profile_page.click_nav_edit()
         profile_page.verify_edit()
         info_before = profile_page.get_info_profile()
-        profile_page.fill_firstname("tester1")
-        profile_page.fill_lastname("tester1")
-        profile_page.fill_team("tester1")
+        profile_page.fill_firstname("tester"+random_word(3, 5))
+        profile_page.fill_lastname("tester"+random_word(3, 5))
+        profile_page.fill_team("tester"+random_word(3, 5))
         profile_page.fill_gender()
         profile_page.fill_birthday("1990-05-29")
-        profile_page.fill_city("testeros1")
+        profile_page.fill_city("testeros"+random_word(3, 5))
         profile_page.fill_sport_category()
         profile_page.fill_email("Tester@tester.ru")
         profile_page.click_btn_save()
@@ -48,4 +49,5 @@ class TestProfileForm:
         profile_page.fill_sport_category()
         profile_page.fill_email("Tester@tester.ru")
         profile_page.click_btn_save()
+        time.sleep(4)
 

@@ -11,8 +11,8 @@ class TestAdminEventForm:
     def test_event_classic(self):
         admin_event_form = AdminEventPage(self.driver)
         admin_event_form._go_to_url(f'{URL}/admin')
-        admin_event_form.fill_username('admin2')
-        admin_event_form.fill_password('admin')
+        admin_event_form.fill_username('Tester2')
+        admin_event_form.fill_password('Tester3')
         admin_event_form.click_btn_enter()
         admin_event_form.verify_header_admin()
         admin_event_form._go_to_url(f'{URL}/admin/events/create')
