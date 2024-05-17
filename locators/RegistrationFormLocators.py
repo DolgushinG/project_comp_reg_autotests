@@ -26,6 +26,7 @@ class RegistrationForm:
     DELHI = (By.XPATH, '//*[contains(text(), "Delhi")]')
     btn_submit = (By.ID, 'submit')
     nav_profile = (By.XPATH, '//*[@id="overview"]/span')
+    nav_profile_2 = (By.ID, 'overview')
     nav_header_profile_image = (By.CSS_SELECTOR, '.profile-user-img-header.rounded-circle')
     modal_submitting_form = (By.CSS_SELECTOR, '.modal-body')
     modal_name = (By.XPATH, '(//*[contains(text(), "Student Name")]/../td)[2]')

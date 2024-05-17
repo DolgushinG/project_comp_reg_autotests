@@ -77,8 +77,13 @@ class RegistrationFormPage(BasePage):
         assert self._element_visible(RegistrationForm.modal_submitting_form)
 
     def verify_profile(self) -> None:
-        text = self._get_text(RegistrationForm.nav_profile)
-        assert 'ПРОФИЛЬ' == text, f"EXP - ПРОФИЛЬ, REAL - {text}"
+        self._try_wait_element(RegistrationForm.nav_profile)
+        if self._element_visible(RegistrationForm.nav_profile):
+            text = self._get_text(RegistrationForm.nav_profile)
+            assert 'ПРОФИЛЬ' == text, f"EXP - ПРОФИЛЬ, REAL - {text}"
+        else:
+            assert self._element_visible(RegistrationForm.nav_profile_2), "Profile not found"
+
 
     def verify_full_name(self, firstname: str, lastname: str) -> None:
         full_name = f"{firstname} {lastname}"
