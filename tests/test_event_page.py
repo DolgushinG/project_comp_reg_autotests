@@ -11,12 +11,22 @@ from pages.ProfilePage import ProfilePage
 @pytest.mark.usefixtures("driver")
 class TestEvent:
     def test_open_event(self):
-        login_form = EventPage(self.driver)
-        login_form._go_to_url(f'{URL}/')
-        login_form.click_event_with_js()
-        login_form.click_nav_main_info()
-        login_form.click_nav_rules()
-        login_form.click_nav_price()
+        event_form = EventPage(self.driver)
+        event_form._go_to_url(f'{URL}/')
+        event_form.click_event_with_js()
+        event_form.click_nav_main_info()
+        event_form.click_nav_rules()
+        event_form.click_nav_price()
+
+    def test_take_part(self, reg):
+        event_form = EventPage(self.driver)
+        event_form._go_to_url(f'{URL}/')
+        event_form.click_event_with_js()
+        event_form.select_category()
+        event_form.select_birthday()
+        event_form.select_sets()
+        event_form.click_btn_take_part()
+        event_form.verify_success_take_part()
 
 
 

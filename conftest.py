@@ -12,6 +12,7 @@ from config.options import get_options
 from constants import User, URL, DEFAULT_USER
 from pages.LoginFormPage import LoginFormPage
 from pages.ProfilePage import ProfilePage
+from pages.RegistrationFormPage import RegistrationFormPage
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 OUTPUT_ROOT = os.path.join(PROJECT_ROOT, 'tests', 'output')
@@ -85,6 +86,19 @@ def login(request):
     login_form.verify_header_profile()
     profile_page = ProfilePage(request.cls.driver)
     profile_page._go_to_url(f'{URL}/profile')
-
+@pytest.fixture()
+def reg(request):
+    get_user = User()
+    reg_form = RegistrationFormPage(request.cls.driver)
+    reg_form._go_to_url(f'{URL}/register')
+    reg_form.fill_first_name(get_user.firstname)
+    reg_form.fill_last_name(get_user.lastname)
+    reg_form.select_gender()
+    reg_form.fill_email(get_user.email)
+    reg_form.fill_password(get_user.password)
+    reg_form.fill_confirm_password(get_user.password)
+    reg_form.click_checkbox_accept_terms()
+    reg_form.click_btn_submit()
+    reg_form.verify_profile()
 
 
