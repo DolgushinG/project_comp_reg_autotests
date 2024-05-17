@@ -16,7 +16,7 @@ class TestRegistrationForm:
         reg_form.fill_first_name(get_user.firstname)
         reg_form.fill_last_name(get_user.lastname)
         reg_form.select_gender()
-        reg_form.fill_email(get_user.email)
+        reg_form.fill_email(get_email())
         reg_form.fill_password(get_user.password)
         reg_form.fill_confirm_password(get_user.password)
         reg_form.click_checkbox_accept_terms()
