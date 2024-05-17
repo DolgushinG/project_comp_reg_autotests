@@ -24,9 +24,40 @@ class TestEvent:
         event_form.click_event_with_js()
         event_form.select_category()
         event_form.select_birthday()
-        event_form.select_sets()
+        event_form.select_sets(1)
         event_form.click_btn_take_part()
         event_form.verify_success_take_part()
+
+    def test_change_set(self, reg):
+        event_form = EventPage(self.driver)
+        event_form._go_to_url(f'{URL}/')
+        event_form.click_event_with_js()
+        event_form.select_category()
+        event_form.select_birthday()
+        event_form.select_sets(1)
+        event_form.click_btn_take_part()
+        event_form.verify_success_take_part()
+        grab_set = event_form.grab_info_sets()
+        event_form.select_changed_sets(2)
+        event_form.click_btn_changed_set()
+        grab_set_2 = event_form.grab_info_sets()
+        assert grab_set != grab_set_2, f'Error: {grab_set} == {grab_set_2}'
+
+    def test_send_result(self, reg):
+        event_form = EventPage(self.driver)
+        event_form._go_to_url(f'{URL}/')
+        event_form.click_event_with_js()
+        event_form.select_category()
+        event_form.select_birthday()
+        event_form.select_sets(1)
+        event_form.click_btn_take_part()
+        event_form.verify_success_take_part()
+        event_form._go_to_send_result()
+        event_form.click_all_redpoints()
+        event_form.scroll_down()
+        event_form.click_send_result()
+        event_form.verify_already_take_part()
+
 
 
 

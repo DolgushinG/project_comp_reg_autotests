@@ -32,9 +32,13 @@ class EventPage(BasePage):
         select = Select(self.driver.find_element(*EventPageLocators.select_category))
         select.select_by_index(1)
 
-    def select_sets(self):
+    def select_sets(self, set: int):
         select = Select(self.driver.find_element(*EventPageLocators.select_sets))
-        select.select_by_index(1)
+        select.select_by_index(set)
+
+    def select_changed_sets(self, set_take_part: int):
+        select = Select(self.driver.find_element(*EventPageLocators.select_changed_sets))
+        select.select_by_index(set_take_part)
 
     def click_btn_take_part(self):
         self._wait_and_click(EventPageLocators.btn_take_part)
@@ -47,7 +51,28 @@ class EventPage(BasePage):
         self._try_wait_element(EventPageLocators.success_take_part)
         if self._element_visible(EventPageLocators.success_take_part):
             assert self._element_visible(EventPageLocators.success_take_part)
+
+
+    def _go_to_send_result(self):
+        self._try_wait_element(EventPageLocators.success_take_part)
+        self._click(EventPageLocators.success_take_part)
+
+    def click_all_redpoints(self):
+        self._wait_and_click(EventPageLocators.btn_all_redpoints)
+
+    def click_send_result(self):
+        self.scroll_down()
+        time.sleep(1)
+        self._wait_and_click(EventPageLocators.btn_send_result)
+
+    def verify_already_take_part(self):
         if self._element_visible(EventPageLocators.success_take_part_2):
             assert self._element_visible(EventPageLocators.success_take_part_2)
 
+    def grab_info_sets(self):
+        return self._get_attribute(EventPageLocators.select_changed_sets, 'value')
+
+    def click_btn_changed_set(self):
+        self._wait_and_click(EventPageLocators.btn_change_set)
+        self._wait_element(EventPageLocators.save_success)
 
