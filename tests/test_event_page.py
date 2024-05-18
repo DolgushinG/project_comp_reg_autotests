@@ -18,6 +18,20 @@ class TestEvent:
         event_form.click_nav_rules()
         event_form.click_nav_price()
 
+    def test_open_list_participant(self):
+        event_form = EventPage(self.driver)
+        event_form._go_to_url(f'{URL}/')
+        event_form.click_event_with_js()
+        event_form.click_list_participant()
+        event_form.verify_list_participant()
+
+    def test_open_qualification_results(self):
+        event_form = EventPage(self.driver)
+        event_form._go_to_url(f'{URL}/')
+        event_form.click_event_with_js()
+        event_form.click_qualification_results()
+        event_form.verify_qualification_results()
+
     def test_take_part(self, reg):
         event_form = EventPage(self.driver)
         event_form._go_to_url(f'{URL}/')

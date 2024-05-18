@@ -76,3 +76,15 @@ class EventPage(BasePage):
         self._wait_and_click(EventPageLocators.btn_change_set)
         self._wait_element(EventPageLocators.save_success)
 
+    def click_list_participant(self):
+        self._wait_and_click(EventPageLocators.btn_list_participant)
+
+    def verify_list_participant(self):
+        assert self._element_visible(EventPageLocators.list_participants), f'list_participants not found'
+
+    def click_qualification_results(self):
+        self._wait_and_click(EventPageLocators.btn_qualification_results)
+
+    def verify_qualification_results(self):
+        assert self._element_visible(EventPageLocators.qualification_results), f'list_participants not found'
+
