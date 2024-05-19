@@ -1,4 +1,5 @@
 import pytest
+from selenium.webdriver.common.by import By
 
 from conftest import PROJECT_ROOT
 from constants import URL
@@ -27,7 +28,7 @@ class TestAdminEventForm:
         admin_event_form.fill_field(field='link_payment', value="https://ya.ru")
         # # admin_event_form.fill_field(field='qr_image', value="/path")
         admin_event_form.fill_field(field='amount_start_price', value="1200")
-        # admin_event_form.fill_field(field='info_payment', value="long text")
+        admin_event_form.fill_field(field='[name="info_payment"]', value="long text", type=By.CSS_SELECTOR)
         admin_event_form.click_btn_tab_options()
         admin_event_form.click_to_btn_classic_radio_btn()
         # admin_event_form.fill_field(field='amount_the_best_participant', value="15")
@@ -60,3 +61,19 @@ class TestAdminEventForm:
         admin_event_form.verify_final()
         admin_event_form.go_to_pay()
         admin_event_form.verify_pay()
+
+    def test_edit_and_delete_routes(self, login_to_admin):
+        admin_event_form = AdminEventPage(self.driver)
+        admin_event_form.go_to_setting_routes()
+        admin_event_form.verify_setting_routes()
+        admin_event_form.click_to('Редактировать', 'a')
+        admin_event_form.scroll_down()
+        admin_event_form.click_to('Отправить', 'button')
+        admin_event_form.verify_title_success_create()
+        admin_event_form.click_to('Удалить', 'a')
+        admin_event_form.click_to('Подтвердить', 'button')
+        admin_event_form.click_to('OK', 'button')
+        admin_event_form.click_to('Сгенерировать трассы', 'a')
+        admin_event_form.scroll_down()
+        admin_event_form.click_to('Отправить', 'button')
+        admin_event_form.verify_title_success_create()

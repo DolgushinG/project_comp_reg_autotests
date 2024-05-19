@@ -19,8 +19,8 @@ class AdminEventPage(BasePage):
     def fill_password(self, password: str) -> None:
         self._fill_field(AdminEventPageLocators.password, password)
 
-    def fill_field(self, field: str, value: str) -> None:
-        element = (By.ID, f'{field}')
+    def fill_field(self, field: str, value: str, type=By.ID) -> None:
+        element = (type, f'{field}')
         self._fill_field(element, value)
 
     def fill_field_description(self, value: str) -> None:
@@ -42,8 +42,9 @@ class AdminEventPage(BasePage):
 
     def click_btn_enter(self) -> None:
         self._wait_and_click(AdminEventPageLocators.btn_enter)
-    def click_to(self, text) -> None:
-        element = (By.XPATH, f'//*[contains(text(), "{text}")]')
+
+    def click_to(self, text, type="*") -> None:
+        element = (By.XPATH, f'//{type}[contains(., "{text}")]')
         self._wait_and_click(element)
 
     def click_btn_tab_pay(self) -> None:
@@ -55,6 +56,7 @@ class AdminEventPage(BasePage):
 
     def click_btn_tab_options(self) -> None:
         self._wait_and_click(AdminEventPageLocators.btn_tab_options)
+
     def click_to_btn_classic_radio_btn(self) -> None:
         self._wait_and_click(AdminEventPageLocators.classic_radio_btn)
 
@@ -66,6 +68,7 @@ class AdminEventPage(BasePage):
 
     def verify_header_admin(self) -> None:
         assert self._element_visible(AdminEventPageLocators.title_admin), f'title_admin not found'
+
     def verify_title_success_create(self) -> None:
         assert self._element_visible(AdminEventPageLocators.title_success_create)
 
@@ -125,3 +128,6 @@ class AdminEventPage(BasePage):
 
     def delete_event(self):
         self._wait_and_click(AdminEventPageLocators.event_2)
+
+    def delete_routes(self):
+        pass
