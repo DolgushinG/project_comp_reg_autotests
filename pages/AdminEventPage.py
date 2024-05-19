@@ -46,6 +46,15 @@ class AdminEventPage(BasePage):
         element = (By.XPATH, f'//*[contains(text(), "{text}")]')
         self._wait_and_click(element)
 
+    def click_btn_tab_pay(self) -> None:
+        self._wait_and_click(AdminEventPageLocators.btn_tab_pay)
+        time.sleep(1)
+
+    def click_btn_tab_control(self) -> None:
+        self._wait_and_click(AdminEventPageLocators.btn_tab_control)
+
+    def click_btn_tab_options(self) -> None:
+        self._wait_and_click(AdminEventPageLocators.btn_tab_options)
     def click_to_btn_classic_radio_btn(self) -> None:
         self._wait_and_click(AdminEventPageLocators.classic_radio_btn)
 
@@ -56,7 +65,63 @@ class AdminEventPage(BasePage):
         self._wait_and_click(AdminEventPageLocators.btn_add_category)
 
     def verify_header_admin(self) -> None:
-        self._wait_and_click(AdminEventPageLocators.title_admin)
+        assert self._element_visible(AdminEventPageLocators.title_admin), f'title_admin not found'
     def verify_title_success_create(self) -> None:
-        self._wait_element(AdminEventPageLocators.title_success_create)
         assert self._element_visible(AdminEventPageLocators.title_success_create)
+
+    def go_to_main(self):
+        self._wait_and_click(AdminEventPageLocators.nav_main)
+
+    def verify_main(self):
+        self._wait_element(AdminEventPageLocators.title_main)
+        assert self._element_visible(AdminEventPageLocators.title_main)
+
+    def verify_pay(self):
+        self._wait_element(AdminEventPageLocators.title_pay)
+        assert self._element_visible(AdminEventPageLocators.title_pay)
+
+    def go_to_events(self):
+        self._wait_and_click(AdminEventPageLocators.nav_events)
+
+    def verify_events(self):
+        self._wait_element(AdminEventPageLocators.title_events)
+        assert self._element_visible(AdminEventPageLocators.title_events)
+
+    def go_to_qualification(self):
+        self._wait_and_click(AdminEventPageLocators.nav_qualification)
+
+    def verify_qualification(self):
+        self._wait_element(AdminEventPageLocators.title_qualification)
+        assert self._element_visible(AdminEventPageLocators.title_qualification)
+
+    def go_to_semifinal(self):
+        self._wait_and_click(AdminEventPageLocators.nav_semifinal)
+
+    def verify_semifinal(self):
+        self._wait_element(AdminEventPageLocators.title_semifinal)
+        assert self._element_visible(AdminEventPageLocators.title_semifinal)
+
+    def go_to_setting_routes(self):
+        self._wait_and_click(AdminEventPageLocators.nav_setting_routes)
+
+    def verify_setting_routes(self):
+        self._wait_element(AdminEventPageLocators.title_setting_routes)
+        assert self._element_visible(AdminEventPageLocators.title_setting_routes)
+
+    def go_to_final(self):
+        self._wait_and_click(AdminEventPageLocators.nav_final)
+
+    def verify_final(self):
+        self._wait_element(AdminEventPageLocators.title_final)
+        assert self._element_visible(AdminEventPageLocators.title_final)
+
+    def go_to_pay(self):
+        self._wait_and_click(AdminEventPageLocators.nav_pay)
+
+    def scroll_up(self):
+        time.sleep(1)
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollTop);")
+        time.sleep(1)
+
+    def delete_event(self):
+        self._wait_and_click(AdminEventPageLocators.event_2)

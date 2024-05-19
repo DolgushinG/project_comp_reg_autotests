@@ -10,6 +10,7 @@ import tools
 from config.drivers import get_driver
 from config.options import get_options
 from constants import User, URL, DEFAULT_USER
+from pages.AdminEventPage import AdminEventPage
 from pages.LoginFormPage import LoginFormPage
 from pages.ProfilePage import ProfilePage
 from pages.RegistrationFormPage import RegistrationFormPage
@@ -105,3 +106,11 @@ def reg(request):
     reg_form.click_checkbox_accept_terms()
     reg_form.click_btn_submit()
     reg_form.verify_profile()
+@pytest.fixture()
+def login_to_admin(request):
+    admin_event_form = AdminEventPage(request.cls.driver)
+    admin_event_form._go_to_url(f'{URL}/admin')
+    admin_event_form.fill_username('Tester2')
+    admin_event_form.fill_password('Tester3')
+    admin_event_form.click_btn_enter()
+    admin_event_form.verify_header_admin()
