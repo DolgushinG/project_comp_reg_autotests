@@ -120,3 +120,4 @@ def delete_event(request):
     yield
     time.sleep(1)
     admin_event_form = AdminEventPage(request.cls.driver)
+    admin_event_form.delete_event()
