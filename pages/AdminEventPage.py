@@ -19,7 +19,7 @@ class AdminEventPage(BasePage):
     def fill_password(self, password: str) -> None:
         self.fill_field(AdminEventPageLocators.password, password)
 
-    def fill_field(self, field: str, value: str, type=By.ID) -> None:
+    def fill_field_dinamic(self, field: str, value: str, type=By.ID) -> None:
         element = (type, f'{field}')
         self.fill_field(element, value)
 

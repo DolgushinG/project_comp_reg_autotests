@@ -26,7 +26,6 @@ BROWSER_NAME = ''
 def driver(request):
     options = get_options(BROWSER_NAME)
     driver = get_driver(browser_name=BROWSER_NAME, driver=webdriver, options=options)
-    driver.maximize_window()
     driver.implicitly_wait(10)
     request.cls.driver = driver
     yield request.cls.driver
