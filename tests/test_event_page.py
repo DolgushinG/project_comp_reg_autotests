@@ -12,7 +12,7 @@ from pages.ProfilePage import ProfilePage
 class TestEvent:
     def test_open_event(self):
         event_form = EventPage(self.driver)
-        event_form._go_to_url(f'{URL}/')
+        event_form.go_to_url(f'{URL}/')
         event_form.click_event_with_js()
         event_form.click_nav_main_info()
         event_form.click_nav_rules()
@@ -20,21 +20,21 @@ class TestEvent:
 
     def test_open_list_participant(self):
         event_form = EventPage(self.driver)
-        event_form._go_to_url(f'{URL}/')
+        event_form.go_to_url(f'{URL}/')
         event_form.click_event_with_js()
         event_form.click_list_participant()
         event_form.verify_list_participant()
 
     def test_open_qualification_results(self):
         event_form = EventPage(self.driver)
-        event_form._go_to_url(f'{URL}/')
+        event_form.go_to_url(f'{URL}/')
         event_form.click_event_with_js()
         event_form.click_qualification_results()
         event_form.verify_qualification_results()
 
     def test_take_part(self, reg):
         event_form = EventPage(self.driver)
-        event_form._go_to_url(f'{URL}/')
+        event_form.go_to_url(f'{URL}/')
         event_form.click_event_with_js()
         event_form.select_category()
         event_form.select_birthday()
@@ -44,7 +44,7 @@ class TestEvent:
 
     def test_change_set(self, reg):
         event_form = EventPage(self.driver)
-        event_form._go_to_url(f'{URL}/')
+        event_form.go_to_url(f'{URL}/')
         event_form.click_event_with_js()
         event_form.select_category()
         event_form.select_birthday()
@@ -59,14 +59,14 @@ class TestEvent:
 
     def test_send_result(self, reg):
         event_form = EventPage(self.driver)
-        event_form._go_to_url(f'{URL}/')
+        event_form.go_to_url(f'{URL}/')
         event_form.click_event_with_js()
         event_form.select_category()
         event_form.select_birthday()
         event_form.select_sets(1)
         event_form.click_btn_take_part()
         event_form.verify_success_take_part()
-        event_form._go_to_send_result()
+        event_form.go_to_send_result()
         event_form.click_all_redpoints()
         event_form.scroll_down()
         event_form.click_send_result()

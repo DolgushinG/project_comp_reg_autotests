@@ -12,7 +12,7 @@ class TestRegistrationForm:
     def test_reg(self):
         get_user = User()
         reg_form = RegistrationFormPage(self.driver)
-        reg_form._go_to_url(f'{URL}/register')
+        reg_form.go_to_url(f'{URL}/register')
         reg_form.fill_first_name(get_user.firstname)
         reg_form.fill_last_name(get_user.lastname)
         reg_form.select_gender()

@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
-    event_2 = (By.CSS_SELECTOR, '[class="grid-row-delete btn btn-xs btn-danger"][data-id="3"]')
+    event_festival_2024 = (By.XPATH, '//td[contains(.,"Фестиваль 2024")]/..//a[@class="grid-row-delete btn btn-xs btn-danger"]')
     nav_pay = (By.XPATH, '//span[contains(text(), "Оплата за сервис")]')
     title_final = (By.XPATH, '//a[contains(text(), "Карточки для финалистов")]')
     nav_final = (By.XPATH, '//span[contains(text(), "Финал")]')

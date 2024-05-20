@@ -9,9 +9,9 @@ from pages.AdminEventPage import AdminEventPage
 @pytest.mark.usefixtures("driver")
 class TestAdminEventForm:
 
-    def test_event_classic(self, login_to_admin):
+    def test_event_classic(self, login_to_admin, delete_event):
         admin_event_form = AdminEventPage(self.driver)
-        admin_event_form._go_to_url(f'{URL}/admin/events/create')
+        admin_event_form.go_to_url(f'{URL}/admin/events/create')
         admin_event_form.fill_field(field='title', value="Фестиваль 2024")
         admin_event_form.fill_field(field='climbing_gym_name', value="skalodrom")
         admin_event_form.fill_field(field='city', value="Москва")

@@ -11,7 +11,7 @@ class TestLoginForm:
 
     def test_login(self):
         login_form = LoginFormPage(self.driver)
-        login_form._go_to_url(f'{URL}/login')
+        login_form.go_to_url(f'{URL}/login')
         login_form.fill_email(DEFAULT_USER.email)
         login_form.fill_password(DEFAULT_USER.password)
         login_form.click_btn_submit()

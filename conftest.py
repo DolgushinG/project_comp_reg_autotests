@@ -83,20 +83,20 @@ def get_user_request(request):
 @pytest.fixture()
 def login(request):
     login_form = LoginFormPage(request.cls.driver)
-    login_form._go_to_url(f'{URL}/login')
+    login_form.go_to_url(f'{URL}/login')
     login_form.fill_email(DEFAULT_USER.email)
     login_form.fill_password(DEFAULT_USER.password)
     login_form.click_btn_submit()
     login_form.verify_header_profile()
     profile_page = ProfilePage(request.cls.driver)
-    profile_page._go_to_url(f'{URL}/profile')
+    profile_page.go_to_url(f'{URL}/profile')
 
 
 @pytest.fixture()
 def reg(request):
     get_user = User()
     reg_form = RegistrationFormPage(request.cls.driver)
-    reg_form._go_to_url(f'{URL}/register')
+    reg_form.go_to_url(f'{URL}/register')
     reg_form.fill_first_name(get_user.firstname)
     reg_form.fill_last_name(get_user.lastname)
     reg_form.select_gender()
@@ -109,8 +109,14 @@ def reg(request):
 @pytest.fixture()
 def login_to_admin(request):
     admin_event_form = AdminEventPage(request.cls.driver)
-    admin_event_form._go_to_url(f'{URL}/admin')
+    admin_event_form.go_to_url(f'{URL}/admin')
     admin_event_form.fill_username('Tester2')
     admin_event_form.fill_password('Tester3')
     admin_event_form.click_btn_enter()
     admin_event_form.verify_header_admin()
+
+@pytest.fixture()
+def delete_event(request):
+    yield
+    time.sleep(1)
+    admin_event_form = AdminEventPage(request.cls.driver)
