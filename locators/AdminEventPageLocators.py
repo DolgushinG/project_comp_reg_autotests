@@ -2,8 +2,16 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
+    btn_generate_result_final = (By.XPATH, '//button[contains(., "Отправить") and @class="swal2-confirm swal2-styled"]')
+    result_final = (By.CSS_SELECTOR, 'tbody > tr')
     event_festival_2024 = (By.XPATH, '//td[contains(.,"Фестиваль 2024")]/..//a[@class="grid-row-delete btn btn-xs btn-danger"]')
+    event_festival_2024_yes = (By.XPATH, '//td[contains(.,"Фестиваль 2024")]/..//span[@class="bootstrap-switch-handle-on bootstrap-switch-success"]')
+    event_festival_2024_no = (By.XPATH, '//td[contains(.,"Фестиваль 2024")]/..//span[@class="bootstrap-switch-handle-off bootstrap-switch-default"]')
+    event_competition_yes = (By.XPATH, '//td[contains(.,"competition")]/..//span[@class="bootstrap-switch-handle-on bootstrap-switch-success"]')
+    event_competition_no = (By.XPATH, '//td[contains(.,"competition")]/..//span[@class="bootstrap-switch-handle-off bootstrap-switch-default"]')
     nav_pay = (By.XPATH, '//span[contains(text(), "Оплата за сервис")]')
+    is_semifinal = (By.XPATH, '(//div[@id="is_semifinal"])[1]')
+    is_not_semifinal = (By.XPATH, '(//div[@id="is_semifinal"])[2]')
     title_final = (By.XPATH, '//a[contains(text(), "Карточки для финалистов")]')
     nav_final = (By.XPATH, '//span[contains(text(), "Финал")]')
     title_setting_routes = (By.XPATH, '//th[contains(text(), "Настройка трасс для соренования")]')

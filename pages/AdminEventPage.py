@@ -43,9 +43,18 @@ class AdminEventPage(BasePage):
     def click_btn_enter(self) -> None:
         self.wait_and_click(AdminEventPageLocators.btn_enter)
 
-    def click_to(self, text, type="*") -> None:
-        element = (By.XPATH, f'//{type}[contains(., "{text}")]')
+    def click_to(self, text, type="*", index=0) -> None:
+        if index == 0:
+            element = (By.XPATH, f'//{type}[contains(., "{text}")]')
+        if index == 1:
+            element = (By.XPATH, f'(//{type}[contains(., "{text}")])[1]')
+        if index == 2:
+            element = (By.XPATH, f'(//{type}[contains(., "{text}")])[2]')
         self.wait_and_click(element)
+
+    def is_semifinal(self):
+        time.sleep(2)
+        self.wait_and_click(AdminEventPageLocators.is_semifinal)
 
     def click_btn_tab_pay(self) -> None:
         self.wait_and_click(AdminEventPageLocators.btn_tab_pay)
@@ -132,3 +141,25 @@ class AdminEventPage(BasePage):
             self.wait_and_click(AdminEventPageLocators.event_festival_2024)
             self.click_to('Подтвердить', 'button')
             self.click_to('OK', 'button')
+
+    def verify_result_final(self):
+        assert 0 < len(self.find_elements(AdminEventPageLocators.result_final)), f'results_final not found'
+
+    def diactivate_old_event(self):
+        time.sleep(1)
+        self.wait_and_click(AdminEventPageLocators.event_competition_yes)
+
+    def diactivate_new_event(self):
+        time.sleep(1)
+        self.wait_and_click(AdminEventPageLocators.event_festival_2024_yes)
+
+    def activate_new_event(self):
+        time.sleep(1)
+        self.wait_and_click(AdminEventPageLocators.event_festival_2024_no)
+
+    def activate_old_event(self):
+        time.sleep(1)
+        self.wait_and_click(AdminEventPageLocators.event_competition_no)
+
+    def click_to_generate_result_final(self):
+        self.wait_and_click(AdminEventPageLocators.btn_generate_result_final)

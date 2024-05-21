@@ -39,6 +39,9 @@ class BasePage:
     def find_element(self, element: tuple):
         return self.driver.find_element(*element)
 
+    def find_elements(self, element: tuple):
+        return self.driver.find_elements(*element)
+
     def wait_element(self, element: tuple):
         try:
             return WebDriverWait(self.driver, self.TIME).until(EC.presence_of_element_located(element))
