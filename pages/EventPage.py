@@ -66,8 +66,8 @@ class EventPage(BasePage):
         self.wait_and_click(EventPageLocators.btn_send_result)
 
     def verify_already_take_part(self):
-        if self.element_visible(EventPageLocators.success_take_part_2):
-            assert self.element_visible(EventPageLocators.success_take_part_2)
+        self.try_wait_element(EventPageLocators.success_take_part_2)
+        assert self.element_visible(EventPageLocators.success_take_part_2)
 
     def grab_info_sets(self):
         return self.get_attribute(EventPageLocators.select_changed_sets, 'value')

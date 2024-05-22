@@ -20,4 +20,4 @@ class EventPageLocators:
     save_success = (By.XPATH, '//button[contains(., "Успешно сохранено")]')
     btn_all_redpoints = (By.ID, 'all-redpoint')
     btn_send_result = (By.ID, 'btn-send-result')
-    success_take_part_2 = (By.XPATH, '//a[contains(., "Вы принимаете участие")]')
+    success_take_part_2 = (By.XPATH, '//button[contains(., "Вы принимаете участие")]')
