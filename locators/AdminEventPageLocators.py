@@ -14,7 +14,7 @@ class AdminEventPageLocators:
     is_not_semifinal = (By.XPATH, '(//div[@id="is_semifinal"])[2]')
     title_final = (By.XPATH, '//a[contains(text(), "Карточки для финалистов")]')
     nav_final = (By.XPATH, '//span[contains(text(), "Финал")]')
-    title_setting_routes = (By.XPATH, '//th[contains(text(), "Настройка трасс для соренования")]')
+    title_setting_routes = (By.XPATH, '//th[contains(text(), "Настройка трасс для соревнования")]')
     nav_setting_routes = (By.XPATH, '//span[contains(text(), "Настройка трасс")]')
     title_semifinal = (By.XPATH, '//a[contains(text(), "Карточки для полуфиналистов")]')
     nav_semifinal = (By.XPATH, '//span[contains(text(), "Полуфинал")]')
