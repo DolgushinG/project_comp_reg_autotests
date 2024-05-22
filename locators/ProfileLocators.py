@@ -16,7 +16,7 @@ class Profile:
     input_gender = (By.ID, 'gender')
     gender_male = (By.XPATH, '//*[contains(., "Муж")]')
     btn_save = (By.ID, 'saveChanges')
-    title_events = (By.XPATH, "//*[contains(., 'Вы еще не принимали участие в соревнованиях')]")
+    title_events = (By.XPATH, "//h5[contains(., 'Вы еще не принимали участие в соревнованиях')]")
     exist_title_events = (By.CLASS_NAME, "accordion-button")
     nav_settings = (By.ID, 'setting')
     title_settings = (By.XPATH, '//label[contains(., \'Старый пароль\')]')
