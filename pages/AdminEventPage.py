@@ -165,3 +165,4 @@ class AdminEventPage(BasePage):
     def click_to_generate_result_final(self):
         self.wait_and_click(AdminEventPageLocators.btn_generate_result_final)
         self.click_to('OK', 'button')
+        time.sleep(3)
