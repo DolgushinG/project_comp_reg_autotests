@@ -93,6 +93,7 @@ class AdminEventPage(BasePage):
         assert self.element_visible(AdminEventPageLocators.title_pay)
 
     def go_to_events(self):
+        time.sleep(1)
         self.wait_and_click(AdminEventPageLocators.nav_events)
 
     def verify_events(self):
@@ -163,3 +164,4 @@ class AdminEventPage(BasePage):
 
     def click_to_generate_result_final(self):
         self.wait_and_click(AdminEventPageLocators.btn_generate_result_final)
+        self.click_to('OK', 'button')
