@@ -18,7 +18,8 @@ class BasePage:
 
     def get_attribute(self, element: tuple, attribute: str, wait=False):
         if wait:
-            return WebDriverWait(self.driver, self.TIME).until(EC.presence_of_element_located(element)).get_attribute(attribute)
+            return WebDriverWait(self.driver, self.TIME).until(EC.presence_of_element_located(element)).get_attribute(
+                attribute)
         return self.driver.find_element(*element).get_attribute(attribute)
 
     def wait_and_click(self, element: tuple):
@@ -42,9 +43,9 @@ class BasePage:
     def find_elements(self, element: tuple):
         return self.driver.find_elements(*element)
 
-    def wait_element(self, element: tuple):
+    def wait_element(self, element: tuple, custom_time=None):
         try:
-            return WebDriverWait(self.driver, self.TIME).until(EC.presence_of_element_located(element))
+            return WebDriverWait(self.driver, custom_time or self.TIME).until(EC.presence_of_element_located(element))
         except TimeoutException and NoSuchElementException:
             msg = f'Element not found, element: "{element}"'
             raise NoSuchElementException(msg)

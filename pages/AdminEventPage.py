@@ -167,3 +167,9 @@ class AdminEventPage(BasePage):
         self.wait_and_click(AdminEventPageLocators.btn_generate_result_final)
         self.click_to('OK', 'button')
         time.sleep(3)
+
+    def click_to_btn_all_route_radio_btn(self):
+        self.wait_and_click(AdminEventPageLocators.all_route_radio_btn)
+
+    def verify_result_qualification(self):
+        self.wait_element(AdminEventPageLocators.result_qualification, 60)
