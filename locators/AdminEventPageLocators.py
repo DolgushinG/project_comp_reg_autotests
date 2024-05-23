@@ -37,6 +37,7 @@ class AdminEventPageLocators:
     image = (By.CSS_SELECTOR, 'input[type="file"]')
     description_text_area = (By.XPATH, '//*[contains(@class, \'note-editable\')]')
     classic_radio_btn = (By.XPATH, '//*[contains(@class, "is_france_system_qualification0")]')
+    france_system_radio_btn = (By.XPATH, '//*[contains(@class, "is_france_system_qualification1")]')
     all_route_radio_btn = (By.XPATH, '//div[contains(@class, \'mode2\')]')
     btn_add_category = (By.XPATH, "//div[contains(@class, 'categories-add')]")
     field_category_1 = (By.XPATH, "(//input[contains(@name, 'categories[values][]')])[1]")

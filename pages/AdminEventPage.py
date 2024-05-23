@@ -46,10 +46,8 @@ class AdminEventPage(BasePage):
     def click_to(self, text, type="*", index=0) -> None:
         if index == 0:
             element = (By.XPATH, f'//{type}[contains(., "{text}")]')
-        if index == 1:
-            element = (By.XPATH, f'(//{type}[contains(., "{text}")])[1]')
-        if index == 2:
-            element = (By.XPATH, f'(//{type}[contains(., "{text}")])[2]')
+        if index > 0:
+            element = (By.XPATH, f'(//{type}[contains(., "{text}")])[{index}]')
         self.wait_and_click(element)
 
     def is_semifinal(self):
@@ -68,6 +66,9 @@ class AdminEventPage(BasePage):
 
     def click_to_btn_classic_radio_btn(self) -> None:
         self.wait_and_click(AdminEventPageLocators.classic_radio_btn)
+
+    def click_to_btn_france_system_radio_btn(self) -> None:
+        self.wait_and_click(AdminEventPageLocators.france_system_radio_btn)
 
     def click_to_all_route_radio_btn(self) -> None:
         self.wait_and_click(AdminEventPageLocators.all_route_radio_btn)
