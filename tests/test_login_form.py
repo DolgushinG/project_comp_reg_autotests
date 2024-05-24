@@ -7,6 +7,7 @@ from pages.LoginFormPage import LoginFormPage
 
 
 @pytest.mark.usefixtures("driver")
+@pytest.mark.main
 class TestLoginForm:
 
     def test_login(self):

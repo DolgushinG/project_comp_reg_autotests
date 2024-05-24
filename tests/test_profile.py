@@ -9,6 +9,7 @@ from tools import random_word
 
 
 @pytest.mark.usefixtures("driver")
+@pytest.mark.main
 class TestProfileForm:
     def test_navigation_profile(self, login):
         profile_page = ProfilePage(self.driver)

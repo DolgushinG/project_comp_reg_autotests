@@ -9,6 +9,7 @@ from pages.ProfilePage import ProfilePage
 
 
 @pytest.mark.usefixtures("driver")
+@pytest.mark.main
 class TestEvent:
     def test_open_event(self):
         event_form = EventPage(self.driver)

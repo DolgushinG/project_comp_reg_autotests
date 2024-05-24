@@ -9,6 +9,7 @@ from pages.AdminEventPage import AdminEventPage
 
 
 @pytest.mark.usefixtures("driver")
+@pytest.mark.admin
 class TestAdminEventForm:
 
     def test_event_classic(self, login_to_admin, delete_event):
