@@ -39,7 +39,8 @@ class TestEvent:
         event_form.click_event_with_js()
         event_form.select_category()
         event_form.select_birthday()
-        event_form.select_sets(1)
+        event_form.select_sport_category()
+        event_form.select_sets(2)
         event_form.click_btn_take_part()
         event_form.verify_success_take_part()
 
@@ -65,6 +66,7 @@ class TestEvent:
         event_form.click_event_with_js()
         event_form.select_category()
         event_form.select_birthday()
+        event_form.select_sport_category()
         event_form.select_sets(2)
         event_form.click_btn_take_part()
         event_form.verify_success_take_part()
