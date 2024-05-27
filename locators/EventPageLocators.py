@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class EventPageLocators:
+    select_sport_category = (By.ID, 'floatingSelectSportCategory')
     btn_main_info = (By.XPATH, '//button[contains(., \'Общая информация\')]')
     btn_sets = (By.XPATH, "//button[contains(., 'Сеты')]")
     btn_rules = (By.XPATH, '//button[contains(., \'Положение\')]')

@@ -37,6 +37,7 @@ class EventPage(BasePage):
         select.select_by_index(set)
 
     def select_changed_sets(self, set_take_part: int):
+        self.driver.execute_script('window.location.reload();')
         select = Select(self.driver.find_element(*EventPageLocators.select_changed_sets))
         select.select_by_index(set_take_part)
 
@@ -87,4 +88,8 @@ class EventPage(BasePage):
 
     def verify_qualification_results(self):
         assert self.element_visible(EventPageLocators.qualification_results), f'list_participants not found'
+
+    def select_sport_category(self):
+        select = Select(self.driver.find_element(*EventPageLocators.select_sport_category))
+        select.select_by_index(2)
 

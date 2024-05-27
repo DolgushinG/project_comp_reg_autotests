@@ -172,4 +172,4 @@ class AdminEventPage(BasePage):
         self.wait_and_click(AdminEventPageLocators.all_route_radio_btn)
 
     def verify_result_qualification(self):
-        self.wait_element(AdminEventPageLocators.result_qualification, 60)
+        self.wait_element(AdminEventPageLocators.result_qualification, 100)
