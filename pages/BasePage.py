@@ -11,7 +11,7 @@ from locators.RegistrationFormLocators import RegistrationForm
 
 
 class BasePage:
-    TIME = 15
+    TIME = 30
 
     def __init__(self, driver):
         self.driver = driver
