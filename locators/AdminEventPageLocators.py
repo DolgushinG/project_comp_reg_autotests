@@ -28,7 +28,7 @@ class AdminEventPageLocators:
     nav_qualification = (By.XPATH, '//span[contains(text(), "Квалификация")]')
     title_events = (By.XPATH, '//a[contains(text(), " Уведомить по почте всех юзеров")]')
     nav_events = (By.XPATH, '//span[contains(text(), "Соревнования")]')
-    title_pay = (By.XPATH, '//th[contains(text(), "Стартовый взнос")]')
+    title_pay = (By.XPATH, '//th[contains(text(), "Соревнование")]')
     title_main = (By.XPATH, '//h3[contains(text(), "Кол-во участников")]')
     nav_main = (By.XPATH, '//span[contains(text(), "Главная")]')
     user_name = (By.CSS_SELECTOR, 'input[name="username"]')
