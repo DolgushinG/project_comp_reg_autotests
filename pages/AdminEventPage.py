@@ -173,3 +173,11 @@ class AdminEventPage(BasePage):
 
     def verify_result_qualification(self):
         self.wait_element(AdminEventPageLocators.result_qualification, 100)
+
+    def click_switch_payment(self):
+        self.wait_and_click(AdminEventPageLocators.switch_payment_1)
+
+    def verify_record_pay(self, amount: str):
+        self.wait_element(AdminEventPageLocators.record_pay)
+        grab_amount = self.get_text(AdminEventPageLocators.record_pay)
+        assert grab_amount == f'{amount} руб.', f'record_pay {amount} not found'

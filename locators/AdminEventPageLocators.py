@@ -2,6 +2,8 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
+    record_pay = (By.CSS_SELECTOR, "td.column-amount_for_pay")
+    switch_payment_1 = (By.XPATH, "(//span[contains(@class,'bootstrap-switch-handle-off bootstrap-switch-default')])[1]")
     result_qualification = (By.XPATH, "(//td[contains(@class, 'column-user-middlename')])[1]")
     btn_generate_result_final = (By.XPATH, '//button[contains(., "Отправить") and @class="swal2-confirm swal2-styled"]')
     result_final = (By.CSS_SELECTOR, 'tbody > tr')
