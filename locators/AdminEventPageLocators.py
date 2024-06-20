@@ -2,6 +2,17 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
+    field_amount_try_zone_5 = (By.XPATH, '(//*[@id="amount_try_zone_5"])[2]')
+    field_amount_try_top_5 = (By.XPATH, '(//*[@id="amount_try_top_5"])[2]')
+    field_amount_try_zone_4 = (By.XPATH, '(//*[@id="amount_try_zone_4"])[2]')
+    field_amount_try_top_4 = (By.XPATH, '(//*[@id="amount_try_top_4"])[2]')
+    field_amount_try_zone_3 = (By.XPATH, '(//*[@id="amount_try_zone_3"])[2]')
+    field_amount_try_top_3 = (By.XPATH, '(//*[@id="amount_try_top_3"])[2]')
+    field_amount_try_zone_2 = (By.XPATH, '(//*[@id="amount_try_zone_2"])[2]')
+    field_amount_try_top_2 = (By.XPATH, '(//*[@id="amount_try_top_2"])[2]')
+    field_amount_try_zone_1 = (By.XPATH, '(//*[@id="amount_try_zone_1"])[2]')
+    field_amount_try_top_1 = (By.XPATH, '(//*[@id="amount_try_top_1"])[2]')
+    btn_add_all_route = (By.XPATH, '(//a[contains(text(), "Общий зачет")])[2]')
     record_pay = (By.CSS_SELECTOR, "td.column-amount_for_pay")
     switch_payment_1 = (By.XPATH, "(//span[contains(@class,'bootstrap-switch-handle-off bootstrap-switch-default')])[1]")
     result_qualification = (By.XPATH, "(//td[contains(@class, 'column-user-middlename')])[1]")
@@ -21,6 +32,9 @@ class AdminEventPageLocators:
     is_semifinal = (By.XPATH, '(//div[@id="is_semifinal"])[1]')
     is_not_semifinal = (By.XPATH, '(//div[@id="is_semifinal"])[2]')
     title_final = (By.XPATH, '//a[contains(text(), "Карточки для финалистов")]')
+    btn_all_add_result_one_route = (By.XPATH, '//a[contains(text(), "Общий зачет по одной трассе")]')
+    field_amount_try_top = (By.XPATH, '(//*[@id="amount_try_top"])[2]')
+    field_amount_try_zone = (By.XPATH, '(//*[@id="amount_try_zone"])[2]')
     nav_final = (By.XPATH, '//span[contains(text(), "Финал")]')
     title_setting_routes = (By.XPATH, '//th[contains(text(), "Настройка трасс для соревнования")]')
     nav_setting_routes = (By.XPATH, '//span[contains(text(), "Настройка трасс")]')

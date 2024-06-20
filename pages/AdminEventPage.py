@@ -2,6 +2,7 @@ import time
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.support.select import Select
 
 from locators.AdminEventPageLocators import AdminEventPageLocators
 from locators.EventPageLocators import EventPageLocators
@@ -21,7 +22,7 @@ class AdminEventPage(BasePage):
 
     def fill_field_dinamic(self, field: str, value: str, type=By.ID) -> None:
         element = (type, f'{field}')
-        self.fill_field(element, value)
+        self.fill_field(element, value, clear=False)
 
     def fill_field_description(self, value: str) -> None:
         self.fill_field(AdminEventPageLocators.description_text_area, value)
@@ -45,10 +46,56 @@ class AdminEventPage(BasePage):
 
     def click_to(self, text, type="*", index=0) -> None:
         if index == 0:
-            element = (By.XPATH, f'//{type}[contains(., "{text}")]')
+            element = (By.XPATH, f'//{type}[contains(text(), "{text}")]')
         if index > 0:
-            element = (By.XPATH, f'(//{type}[contains(., "{text}")])[{index}]')
+            element = (By.XPATH, f'(//{type}[contains(text(), "{text}")])[{index}]')
         self.wait_and_click(element)
+
+
+    def click_btn_add_one_route(self):
+        time.sleep(2)
+        self.wait_element(AdminEventPageLocators.btn_all_add_result_one_route)
+        self.click(AdminEventPageLocators.btn_all_add_result_one_route)
+
+    def select_participant(self, category) -> None:
+        if category == "Новичок":
+            time.sleep(2)
+            self.wait_and_click(EventPageLocators.select_participant)
+            time.sleep(1)
+            self.wait_and_click(EventPageLocators.pop_up_select_beginner_index_1)
+        if category == "Общий зачет по одному":
+            time.sleep(4)
+            self.wait_and_click(EventPageLocators.select_participant_3)
+            time.sleep(1)
+            self.wait_and_click(EventPageLocators.pop_up_select_all_index_1)
+        if category == "Общий зачет":
+            time.sleep(4)
+            self.wait_and_click(EventPageLocators.select_participant_4)
+            time.sleep(1)
+            self.wait_and_click(EventPageLocators.pop_up_select_all_index_1)
+
+
+    def select_number_route(self, category) -> None:
+        if category == "Новичок":
+            time.sleep(1)
+            self.wait_and_click(EventPageLocators.select_number_route)
+            time.sleep(1)
+            self.wait_and_click(EventPageLocators.pop_up_select_route_index_1)
+        if category == "Общий зачет":
+            time.sleep(1)
+            self.wait_and_click(EventPageLocators.select_number_route_3)
+            time.sleep(1)
+            self.wait_and_click(EventPageLocators.pop_up_select_route_index_1)
+        if category == "Общий зачет по одному":
+            time.sleep(1)
+            self.wait_and_click(EventPageLocators.select_number_route_2)
+            time.sleep(1)
+            self.wait_and_click(EventPageLocators.pop_up_select_route_index_1)
+    def fill_field_amount_try_top(self, text):
+        self.fill_field(AdminEventPageLocators.field_amount_try_top, text)
+
+    def fill_field_amount_try_zone(self, text):
+        self.fill_field(AdminEventPageLocators.field_amount_try_zone, text)
 
     def is_semifinal(self):
         time.sleep(2)
@@ -114,6 +161,9 @@ class AdminEventPage(BasePage):
     def verify_semifinal(self):
         self.wait_element(AdminEventPageLocators.title_semifinal)
         assert self.element_visible(AdminEventPageLocators.title_semifinal)
+
+    def click_btn_add_all_route(self):
+        self.wait_and_click(AdminEventPageLocators.btn_add_all_route)
 
     def go_to_setting_routes(self):
         self.wait_and_click(AdminEventPageLocators.nav_setting_routes)
@@ -181,3 +231,33 @@ class AdminEventPage(BasePage):
         self.wait_element(AdminEventPageLocators.record_pay)
         grab_amount = self.get_text(AdminEventPageLocators.record_pay)
         assert grab_amount == f'{amount} руб.', f'record_pay {amount} not found'
+
+    def fill_field_amount_try_top_1(self, text):
+        self.fill_field(AdminEventPageLocators.field_amount_try_top_1, text)
+
+    def fill_field_amount_try_zone_1(self, param):
+        self.fill_field(AdminEventPageLocators.field_amount_try_zone_1, param)
+
+    def fill_field_amount_try_top_2(self, param):
+        self.fill_field(AdminEventPageLocators.field_amount_try_top_2, param)
+
+    def fill_field_amount_try_zone_2(self, param):
+        self.fill_field(AdminEventPageLocators.field_amount_try_zone_2, param)
+
+    def fill_field_amount_try_top_3(self, param):
+        self.fill_field(AdminEventPageLocators.field_amount_try_top_3, param)
+
+    def fill_field_amount_try_zone_3(self, param):
+        self.fill_field(AdminEventPageLocators.field_amount_try_zone_3, param)
+
+    def fill_field_amount_try_top_4(self, param):
+        self.fill_field(AdminEventPageLocators.field_amount_try_top_4, param)
+
+    def fill_field_amount_try_zone_4(self, param):
+        self.fill_field(AdminEventPageLocators.field_amount_try_zone_4, param)
+
+    def fill_field_amount_try_top_5(self, param):
+        self.fill_field(AdminEventPageLocators.field_amount_try_top_5, param)
+
+    def fill_field_amount_try_zone_5(self, param):
+        self.fill_field(AdminEventPageLocators.field_amount_try_zone_5, param)

@@ -2,8 +2,17 @@ from selenium.webdriver.common.by import By
 
 
 class EventPageLocators:
+    select_number_route_3 = (By.XPATH, '(//*[@id="show_final_route_id_1"])[2]')
+    pop_up_select_route_index_1 = (By.XPATH, '//li[contains(text(), \'1\')]')
+    pop_up_select_beginner_index_1 = (By.XPATH, '//li[contains(text(), \'Новичок\')]')
+    pop_up_select_all_index_1 = (By.XPATH, '//li[contains(text(), \'Общий зачет\')]')
+    select_participant = (By.XPATH, "(//span[contains(text(), 'Участник')])[1]")
+    select_participant_3 = (By.XPATH, "(//span[contains(text(), 'Участник')])[3]")
+    select_participant_4 = (By.XPATH, "(//span[contains(text(), 'Участник')])[4]")
+    select_number_route = (By.XPATH, "(//span[contains(text(), 'Трасса')])[1]")
+    select_number_route_2 = (By.XPATH, "(//span[contains(text(), 'Трасса')])[2]")
     select_sport_category = (By.ID, 'floatingSelectSportCategory')
-    btn_main_info = (By.XPATH, '//button[contains(., \'Общая информация\')]')
+    btn_main_info = (By.XPATH, '//button[contains(text(), \'Общая информация\')]')
     btn_sets = (By.XPATH, "//button[contains(., 'Сеты')]")
     btn_rules = (By.XPATH, '//button[contains(., \'Положение\')]')
     btn_price = (By.XPATH, '//button[contains(., \'Стартовый взнос\')]')

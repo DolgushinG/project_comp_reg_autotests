@@ -1,0 +1,24 @@
+from selenium.webdriver.common.by import By
+
+from conftest import PROJECT_ROOT
+from constants import URL
+from pages.AdminEventPage import AdminEventPage
+
+
+def repeat_fill_fields(driver):
+    admin_event_form = AdminEventPage(driver)
+    admin_event_form.go_to_url(f'{URL}/admin/events/create')
+    admin_event_form.fill_field_dinamic(field='title', value="Фестиваль 2024")
+    admin_event_form.fill_field_dinamic(field='climbing_gym_name', value="skalodrom")
+    admin_event_form.fill_field_dinamic(field='city', value="Москва")
+    admin_event_form.fill_field_dinamic(field='start_date', value="2024-03-19")
+    admin_event_form.fill_field_dinamic(field='end_date', value="2024-03-19")
+    admin_event_form.upload_image(f"{PROJECT_ROOT}/image.png")
+    admin_event_form.fill_field_description(value="long text")
+    admin_event_form.fill_field_dinamic(field='contact', value="79992200222")
+    admin_event_form.scroll_up()
+    admin_event_form.click_btn_tab_pay()
+    admin_event_form.fill_field_dinamic(field='link_payment', value="https://ya.ru")
+    admin_event_form.fill_field_dinamic(field='amount_start_price', value="1200")
+    admin_event_form.fill_field_dinamic(field='[name="info_payment"]', value="long text", type=By.CSS_SELECTOR)
+    return admin_event_form
