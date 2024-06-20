@@ -9,7 +9,7 @@ from pages.LoginFormPage import LoginFormPage
 @pytest.mark.usefixtures("driver")
 @pytest.mark.main
 class TestLoginForm:
-
+    @pytest.mark.main
     def test_login(self):
         login_form = LoginFormPage(self.driver)
         login_form.go_to_url(f'{URL}/login')

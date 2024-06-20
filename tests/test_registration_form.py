@@ -8,8 +8,8 @@ from tools import random_word, get_email
 
 
 @pytest.mark.usefixtures("driver")
-@pytest.mark.main
 class TestRegistrationForm:
+    @pytest.mark.main
     def test_reg(self):
         get_user = User()
         reg_form = RegistrationFormPage(self.driver)

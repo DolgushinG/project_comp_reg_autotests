@@ -10,9 +10,9 @@ from pages.AdminEventPage import AdminEventPage
 
 
 @pytest.mark.usefixtures("driver")
-@pytest.mark.admin
 class TestAdminEventForm:
 
+    @pytest.mark.admin
     def test_event_classic(self, login_to_admin, delete_event):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_options()
@@ -31,6 +31,7 @@ class TestAdminEventForm:
         admin_event_form.click_btn_submit()
         admin_event_form.verify_title_success_create()
 
+    @pytest.mark.admin
     def test_navigate_to_sidebar(self, login_to_admin):
         admin_event_form = AdminEventPage(self.driver)
         admin_event_form.go_to_main()
@@ -48,6 +49,7 @@ class TestAdminEventForm:
         admin_event_form.go_to_pay()
         admin_event_form.verify_pay()
 
+    @pytest.mark.admin
     def test_edit_and_delete_routes(self, login_to_admin):
         admin_event_form = AdminEventPage(self.driver)
         admin_event_form.go_to_setting_routes()
@@ -64,6 +66,7 @@ class TestAdminEventForm:
         admin_event_form.click_to('Отправить', 'button')
         admin_event_form.verify_title_success_create()
 
+    @pytest.mark.admin
     def test_event_classic_full(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_options()
@@ -114,6 +117,7 @@ class TestAdminEventForm:
         admin_event_form.activate_old_event()
         admin_event_form.delete_event()
 
+    @pytest.mark.admin
     def test_event_france_system_full(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_options()
@@ -150,6 +154,7 @@ class TestAdminEventForm:
         admin_event_form.activate_old_event()
         admin_event_form.delete_event()
 
+    @pytest.mark.admin
     def test_event_classic_full_with_all_route_mode(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_options()
@@ -198,6 +203,7 @@ class TestAdminEventForm:
         admin_event_form.activate_old_event()
         admin_event_form.delete_event()
 
+    @pytest.mark.admin
     def test_edit_participant_result(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_options()
@@ -239,7 +245,7 @@ class TestAdminEventForm:
         admin_event_form.activate_old_event()
         admin_event_form.delete_event()
 
-
+    @pytest.mark.admin
     def test_add_result_one_route_beginner_in_semifinal(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_options()
@@ -282,7 +288,7 @@ class TestAdminEventForm:
         admin_event_form.activate_old_event()
         admin_event_form.delete_event()
 
-
+    @pytest.mark.admin
     def test_add_result_one_route_in_semifinal(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_options()
@@ -325,6 +331,7 @@ class TestAdminEventForm:
         admin_event_form.activate_old_event()
         admin_event_form.delete_event()
 
+    @pytest.mark.admin
     def test_add_result_all_in_semifinal(self, login_to_admin):
         repeat_fill_fields(self.driver)
         admin_event_form = AdminEventPage(self.driver);

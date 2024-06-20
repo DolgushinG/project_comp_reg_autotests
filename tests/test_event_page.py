@@ -11,6 +11,7 @@ from pages.ProfilePage import ProfilePage
 @pytest.mark.usefixtures("driver")
 @pytest.mark.main
 class TestEvent:
+    @pytest.mark.event
     def test_open_event(self):
         event_form = EventPage(self.driver)
         event_form.go_to_url(f'{URL}/')
@@ -19,6 +20,7 @@ class TestEvent:
         event_form.click_nav_rules()
         event_form.click_nav_price()
 
+    @pytest.mark.event
     def test_open_list_participant(self):
         event_form = EventPage(self.driver)
         event_form.go_to_url(f'{URL}/')
@@ -26,6 +28,7 @@ class TestEvent:
         event_form.click_list_participant()
         event_form.verify_list_participant()
 
+    @pytest.mark.event
     def test_open_qualification_results(self):
         event_form = EventPage(self.driver)
         event_form.go_to_url(f'{URL}/')
@@ -33,6 +36,7 @@ class TestEvent:
         event_form.click_qualification_results()
         event_form.verify_qualification_results()
 
+    @pytest.mark.event
     def test_take_part(self, reg):
         event_form = EventPage(self.driver)
         event_form.go_to_url(f'{URL}/')
@@ -44,6 +48,7 @@ class TestEvent:
         event_form.click_btn_take_part()
         event_form.verify_success_take_part()
 
+    @pytest.mark.event
     def test_change_set(self, reg):
         event_form = EventPage(self.driver)
         event_form.go_to_url(f'{URL}/')
@@ -60,6 +65,7 @@ class TestEvent:
         grab_set_2 = event_form.grab_info_sets()
         assert grab_set != grab_set_2, f'Error: {grab_set} == {grab_set_2}'
 
+    @pytest.mark.event
     def test_send_result(self, reg):
         event_form = EventPage(self.driver)
         event_form.go_to_url(f'{URL}/')
