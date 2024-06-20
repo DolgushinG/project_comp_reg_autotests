@@ -46,9 +46,9 @@ class AdminEventPage(BasePage):
 
     def click_to(self, text, type="*", index=0) -> None:
         if index == 0:
-            element = (By.XPATH, f'//{type}[contains(text(), "{text}")]')
+            element = (By.XPATH, f'//{type}[contains(., "{text}")]')
         if index > 0:
-            element = (By.XPATH, f'(//{type}[contains(text(), "{text}")])[{index}]')
+            element = (By.XPATH, f'(//{type}[contains(., "{text}")])[{index}]')
         self.wait_and_click(element)
 
 
