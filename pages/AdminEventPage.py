@@ -164,6 +164,7 @@ class AdminEventPage(BasePage):
         assert self.element_visible(AdminEventPageLocators.title_semifinal)
 
     def click_btn_add_all_route(self):
+        time.sleep(3)
         self.wait_and_click(AdminEventPageLocators.btn_add_all_route)
 
     def go_to_setting_routes(self):

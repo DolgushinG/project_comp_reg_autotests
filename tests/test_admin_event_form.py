@@ -357,6 +357,7 @@ class TestAdminEventForm:
         admin_event_form.verify_qualification()
         admin_event_form.click_to(' Сгенерировать участников [beta](Ожидание до ~ 2 мин)', 'a')
         admin_event_form.fill_field_dinamic('count', '50')
+        time.sleep(4)
         admin_event_form.click_to('Отправить', 'button', 2)
         time.sleep(10)
         admin_event_form.click_switch_payment()
