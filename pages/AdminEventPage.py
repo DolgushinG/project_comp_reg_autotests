@@ -127,6 +127,7 @@ class AdminEventPage(BasePage):
         assert self.element_visible(AdminEventPageLocators.title_admin), f'title_admin not found'
 
     def verify_title_success_create(self) -> None:
+        self.wait_element(AdminEventPageLocators.title_success_create, 10)
         assert self.element_visible(AdminEventPageLocators.title_success_create)
 
     def go_to_main(self):
