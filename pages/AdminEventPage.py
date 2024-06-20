@@ -59,7 +59,7 @@ class AdminEventPage(BasePage):
 
     def select_participant(self, category) -> None:
         if category == "Новичок":
-            time.sleep(2)
+            time.sleep(4)
             self.wait_and_click(EventPageLocators.select_participant)
             time.sleep(1)
             self.wait_and_click(EventPageLocators.pop_up_select_beginner_index_1)
