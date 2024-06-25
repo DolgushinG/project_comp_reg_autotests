@@ -44,11 +44,11 @@ class AdminEventPage(BasePage):
     def click_btn_enter(self) -> None:
         self.wait_and_click(AdminEventPageLocators.btn_enter)
 
-    def click_to(self, text, type="*", index=0) -> None:
+    def click_to(self, text, type="*", index=0, method=".") -> None:
         if index == 0:
-            element = (By.XPATH, f'//{type}[contains(., "{text}")]')
+            element = (By.XPATH, f'//{type}[contains({method}, "{text}")]')
         if index > 0:
-            element = (By.XPATH, f'(//{type}[contains(., "{text}")])[{index}]')
+            element = (By.XPATH, f'(//{type}[contains({method}, "{text}")])[{index}]')
         self.wait_and_click(element)
 
 
@@ -116,6 +116,29 @@ class AdminEventPage(BasePage):
 
     def click_to_btn_france_system_radio_btn(self) -> None:
         self.wait_and_click(AdminEventPageLocators.france_system_radio_btn)
+
+
+    def select_category(self, category):
+        match category:
+            # case "1":
+            #     time.sleep(1)
+            #     self.wait_and_click(AdminEventPageLocators.select_category_1)
+            #     time.sleep(1)
+            #     self.click_to("Новичок", type="option", index=1, method="text()")
+            # case
+            #     "2":
+            #     time.sleep(1)
+            #     self.wait_and_click(AdminEventPageLocators.select_category_2)
+            #     time.sleep(1)
+            #     self.click_to("Общий зачет", type="option", index=1, method="text()")
+
+            case "1":
+                select = Select(self.driver.find_element(*AdminEventPageLocators.select_category_1))
+                select.select_by_visible_text("Новичок")
+            case "2":
+                select = Select(self.driver.find_element(*AdminEventPageLocators.select_category_2))
+                select.select_by_visible_text("Общий зачет")
+
 
     def click_to_all_route_radio_btn(self) -> None:
         self.wait_and_click(AdminEventPageLocators.all_route_radio_btn)
@@ -263,3 +286,20 @@ class AdminEventPage(BasePage):
 
     def fill_field_amount_try_zone_5(self, param):
         self.fill_field(AdminEventPageLocators.field_amount_try_zone_5, param)
+
+    def click_to_btn_autocategories(self):
+        self.wait_and_click(AdminEventPageLocators.checkbox_autocategories)
+
+    def select_grade(self, grade):
+        time.sleep(1)
+        match grade:
+            case "1":
+                select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_from_1))
+                select.select_by_index(1)
+                select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_to_1))
+                select.select_by_index(8)
+            case "2":
+                select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_from_2))
+                select.select_by_index(9)
+                select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_to_2))
+                select.select_by_index(14)

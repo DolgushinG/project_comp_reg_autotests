@@ -2,6 +2,13 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
+    select_grade_from_1 = (By.CSS_SELECTOR, 'select[name="options_categories[new_1][От какой категории сложности определять эту категорию]"]')
+    select_grade_from_2 = (By.CSS_SELECTOR, 'select[name="options_categories[new_2][От какой категории сложности определять эту категорию]"]')
+    select_grade_to_1 = (By.CSS_SELECTOR, 'select[name="options_categories[new_1][До какой категории сложности определять эту категорию]"]')
+    select_grade_to_2 = (By.CSS_SELECTOR, 'select[name="options_categories[new_2][До какой категории сложности определять эту категорию]"]')
+    select_category_1 = (By.CSS_SELECTOR, 'select[name="options_categories[new_1][Категория участника]"]')
+    select_category_2 = (By.CSS_SELECTOR, 'select[name="options_categories[new_2][Категория участника]"]')
+    checkbox_autocategories = (By.XPATH, '//*[@class="is_auto_categories1"]')
     field_amount_try_zone_5 = (By.XPATH, '(//*[@id="amount_try_zone_5"])[2]')
     field_amount_try_top_5 = (By.XPATH, '(//*[@id="amount_try_top_5"])[2]')
     field_amount_try_zone_4 = (By.XPATH, '(//*[@id="amount_try_zone_4"])[2]')
