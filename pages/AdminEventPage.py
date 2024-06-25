@@ -276,14 +276,13 @@ class AdminEventPage(BasePage):
 
     def select_grade(self, grade):
         time.sleep(1)
-        match grade:
-            case "1":
-                select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_from_1))
-                select.select_by_index(1)
-                select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_to_1))
-                select.select_by_index(8)
-            case "2":
-                select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_from_2))
-                select.select_by_index(9)
-                select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_to_2))
-                select.select_by_index(14)
+        if grade == "1":
+            select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_from_1))
+            select.select_by_index(1)
+            select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_to_1))
+            select.select_by_index(8)
+        if grade == "2":
+            select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_from_2))
+            select.select_by_index(9)
+            select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_to_2))
+            select.select_by_index(14)
