@@ -25,6 +25,7 @@ class TestAdminEventForm:
         admin_event_form.click_btn_submit()
         admin_event_form.verify_title_success_create()
 
+    @pytest.mark.admin
     def test_event_classic_with_autocategories(self, login_to_admin):
         repeat_fill_fields(self.driver)
         admin_event_form = AdminEventPage(self.driver)
