@@ -51,7 +51,6 @@ class AdminEventPage(BasePage):
             element = (By.XPATH, f'(//{type}[contains({method}, "{text}")])[{index}]')
         self.wait_and_click(element)
 
-
     def click_btn_add_one_route(self):
         time.sleep(2)
         self.wait_element(AdminEventPageLocators.btn_all_add_result_one_route)
@@ -74,7 +73,6 @@ class AdminEventPage(BasePage):
             time.sleep(1)
             self.wait_and_click(EventPageLocators.pop_up_select_all_index_1)
 
-
     def select_number_route(self, category) -> None:
         if category == "Новичок":
             time.sleep(1)
@@ -91,6 +89,7 @@ class AdminEventPage(BasePage):
             self.wait_and_click(EventPageLocators.select_number_route_2)
             time.sleep(1)
             self.wait_and_click(EventPageLocators.pop_up_select_route_index_1)
+
     def fill_field_amount_try_top(self, text):
         self.fill_field(AdminEventPageLocators.field_amount_try_top, text)
 
@@ -117,28 +116,13 @@ class AdminEventPage(BasePage):
     def click_to_btn_france_system_radio_btn(self) -> None:
         self.wait_and_click(AdminEventPageLocators.france_system_radio_btn)
 
-
     def select_category(self, category):
-        match category:
-            # case "1":
-            #     time.sleep(1)
-            #     self.wait_and_click(AdminEventPageLocators.select_category_1)
-            #     time.sleep(1)
-            #     self.click_to("Новичок", type="option", index=1, method="text()")
-            # case
-            #     "2":
-            #     time.sleep(1)
-            #     self.wait_and_click(AdminEventPageLocators.select_category_2)
-            #     time.sleep(1)
-            #     self.click_to("Общий зачет", type="option", index=1, method="text()")
-
-            case "1":
-                select = Select(self.driver.find_element(*AdminEventPageLocators.select_category_1))
-                select.select_by_visible_text("Новичок")
-            case "2":
-                select = Select(self.driver.find_element(*AdminEventPageLocators.select_category_2))
-                select.select_by_visible_text("Общий зачет")
-
+        if category == "1":
+            select = Select(self.driver.find_element(*AdminEventPageLocators.select_category_1))
+            select.select_by_visible_text("Новичок")
+        if category == "2":
+            select = Select(self.driver.find_element(*AdminEventPageLocators.select_category_2))
+            select.select_by_visible_text("Общий зачет")
 
     def click_to_all_route_radio_btn(self) -> None:
         self.wait_and_click(AdminEventPageLocators.all_route_radio_btn)
