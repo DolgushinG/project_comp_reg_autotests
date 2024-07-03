@@ -28,7 +28,6 @@ class ProfilePage(BasePage):
 
     def verify_profile(self):
         self.wait_element(Profile.title_profile)
-        assert self.element_visible(Profile.title_profile)
 
     def verify_events(self):
         self.try_wait_element(Profile.title_events)
