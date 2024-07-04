@@ -2,6 +2,8 @@ from selenium.webdriver.common.by import By
 
 
 class EventPageLocators:
+    btn_edit_result = (By.XPATH, '//a[contains(., "Изменить результаты")]')
+    btn_all_flash =(By.ID, 'all-flash')
     select_number_route_3 = (By.XPATH, '(//*[@id="show_final_route_id_1"])[2]')
     pop_up_select_route_index_1 = (By.XPATH, '//li[contains(text(), \'1\')]')
     pop_up_select_beginner_index_1 = (By.XPATH, '//li[contains(text(), \'Новичок\')]')

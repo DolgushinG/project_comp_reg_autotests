@@ -81,6 +81,27 @@ class TestEvent:
         event_form.click_send_result()
         event_form.verify_already_take_part()
 
+    @pytest.mark.event
+    def test_edit_result_after_send_result(self, reg):
+        event_form = EventPage(self.driver)
+        event_form.go_to_url(f'{URL}/')
+        event_form.click_event_with_js()
+        event_form.select_category()
+        event_form.select_birthday()
+        event_form.select_sport_category()
+        event_form.select_sets(2)
+        event_form.click_btn_take_part()
+        event_form.verify_success_take_part()
+        event_form.go_to_send_result()
+        event_form.click_all_redpoints()
+        event_form.scroll_down()
+        event_form.click_send_result()
+        event_form.verify_already_take_part()
+        event_form.click_edit_result()
+        event_form.click_all_flash()
+        event_form.scroll_down()
+        event_form.click_send_result()
+        event_form.verify_already_take_part()
 
 
 

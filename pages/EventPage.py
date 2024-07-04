@@ -93,3 +93,9 @@ class EventPage(BasePage):
         select = Select(self.driver.find_element(*EventPageLocators.select_sport_category))
         select.select_by_index(2)
 
+    def click_edit_result(self):
+        self.wait_and_click(EventPageLocators.btn_edit_result)
+
+    def click_all_flash(self):
+        self.wait_and_click(EventPageLocators.btn_all_flash)
+
