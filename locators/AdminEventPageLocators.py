@@ -2,6 +2,8 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
+    checkbox_is_public_on = (By.XPATH, "//input[contains(@class,'is_public') and @type='checkbox']/../span[contains(@class, 'bootstrap-switch-handle-off bootstrap-switch-default')]")
+    checkbox_is_public_off = (By.XPATH, "//input[contains(@class,'is_public') and @type='checkbox']/../span[contains(@class, 'bootstrap-switch-handle-on bootstrap-switch-success')]")
     select_grade_from_1 = (By.CSS_SELECTOR, 'select[name="options_categories[new_1][От какой категории сложности определять эту категорию]"]')
     select_grade_from_2 = (By.CSS_SELECTOR, 'select[name="options_categories[new_2][От какой категории сложности определять эту категорию]"]')
     select_grade_to_1 = (By.CSS_SELECTOR, 'select[name="options_categories[new_1][До какой категории сложности определять эту категорию]"]')

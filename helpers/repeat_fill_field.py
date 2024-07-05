@@ -13,7 +13,7 @@ def repeat_fill_fields(driver):
     admin_event_form.fill_field_dinamic(field='city', value="Москва")
     admin_event_form.fill_field_dinamic(field='start_date', value="2024-03-19")
     admin_event_form.fill_field_dinamic(field='end_date', value="2024-03-19")
-    admin_event_form.upload_image(f"{PROJECT_ROOT}/image.png")
+    admin_event_form.upload_image(f"{PROJECT_ROOT}/image.jpg")
     admin_event_form.fill_field_description(value="long text")
     admin_event_form.fill_field_dinamic(field='contact', value="79992200222")
     admin_event_form.scroll_up()

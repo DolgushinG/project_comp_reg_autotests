@@ -286,3 +286,9 @@ class AdminEventPage(BasePage):
             select.select_by_index(9)
             select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_to_2))
             select.select_by_index(14)
+
+    def click_is_public(self, state):
+        if 'off' == state:
+            self.wait_and_click(AdminEventPageLocators.checkbox_is_public_off)
+        if 'on' == state:
+            self.wait_and_click(AdminEventPageLocators.checkbox_is_public_on)
