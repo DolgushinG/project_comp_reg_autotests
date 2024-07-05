@@ -436,6 +436,7 @@ class TestAdminEventForm:
         admin_event_form.click_to('Отправить', 'button', 5)
         admin_event_form.verify_result_final()
         admin_event_form.go_to_events()
+        time.sleep(2)
         admin_event_form.verify_events()
         admin_event_form.diactivate_new_event()
         admin_event_form.activate_old_event()
