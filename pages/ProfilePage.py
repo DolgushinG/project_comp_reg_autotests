@@ -28,6 +28,7 @@ class ProfilePage(BasePage):
 
     def verify_profile(self):
         self.wait_element(Profile.title_profile)
+        time.sleep(1)
 
     def verify_events(self):
         self.try_wait_element(Profile.title_events)
@@ -42,10 +43,12 @@ class ProfilePage(BasePage):
     def verify_settings(self):
         self.wait_element(Profile.title_settings)
         assert self.element_visible(Profile.title_settings)
+        time.sleep(1)
 
     def verify_edit(self):
         self.wait_element(Profile.title_edit)
         assert self.element_visible(Profile.title_edit)
+        time.sleep(1)
 
     def fill_firstname(self, firstname: str):
         self.fill_field(Profile.input_lastname, firstname)

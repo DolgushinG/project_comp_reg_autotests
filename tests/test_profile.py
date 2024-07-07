@@ -15,13 +15,10 @@ class TestProfileForm:
         profile_page = ProfilePage(self.driver)
         profile_page.click_nav_profile()
         profile_page.verify_profile()
-        time.sleep(1)
         profile_page.click_nav_events()
         profile_page.verify_events()
-        time.sleep(1)
         profile_page.click_nav_password()
         profile_page.verify_settings()
-        time.sleep(1)
         profile_page.click_nav_edit()
         profile_page.verify_edit()
 
