@@ -149,7 +149,7 @@ class AdminEventPage(BasePage):
         assert self.element_visible(AdminEventPageLocators.title_pay)
 
     def go_to_events(self):
-        time.sleep(1)
+        time.sleep(2)
         self.wait_and_click(AdminEventPageLocators.nav_events)
 
     def verify_events(self):
