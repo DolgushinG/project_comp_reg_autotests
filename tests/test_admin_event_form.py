@@ -48,6 +48,7 @@ class TestAdminEventForm:
         admin_event_form.click_btn_tab_control()
         admin_event_form.click_btn_submit()
         admin_event_form.verify_title_success_create()
+        time.sleep(2)
         admin_event_form.diactivate_old_event()
         admin_event_form.activate_new_event()
         admin_event_form.go_to_setting_routes()

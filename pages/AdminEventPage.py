@@ -280,12 +280,12 @@ class AdminEventPage(BasePage):
             select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_from_1))
             select.select_by_index(1)
             select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_to_1))
-            select.select_by_index(8)
+            select.select_by_index(14)
         if grade == "2":
             select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_from_2))
-            select.select_by_index(9)
+            select.select_by_index(15)
             select = Select(self.driver.find_element(*AdminEventPageLocators.select_grade_to_2))
-            select.select_by_index(14)
+            select.select_by_index(25)
 
     def click_is_public(self, state):
         if 'off' == state:
