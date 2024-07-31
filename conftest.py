@@ -39,7 +39,7 @@ def pytest_configure(config):
 
 @pytest.hookimpl
 def pytest_addoption(parser):
-    parser.addoption('--browser', action='store', default="chrome", help="Choose browser: chrome")
+    parser.addoption('--browser', action='store', default="firefox", help="Choose browser: chrome")
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
