@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
+    field_climbing_gym = (By.XPATH, '(//input[@id="climbing_gym_name"])[2]')
     checkbox_is_public_on = (By.XPATH, "//input[contains(@class,'is_public') and @type='checkbox']/../span[contains(@class, 'bootstrap-switch-handle-off bootstrap-switch-default')]")
     checkbox_is_public_off = (By.XPATH, "//input[contains(@class,'is_public') and @type='checkbox']/../span[contains(@class, 'bootstrap-switch-handle-on bootstrap-switch-success')]")
     select_grade_from_1 = (By.CSS_SELECTOR, 'select[name="options_categories[new_1][От какой категории сложности определять эту категорию]"]')
@@ -65,7 +66,7 @@ class AdminEventPageLocators:
     btn_tab_options = (By.CSS_SELECTOR, '[href="#tab-form-3"]')
     title_admin = (By.XPATH, '//*[contains(text(), "Мой сайт скалодром")]')
     title_success_create = (By.XPATH, '//div[contains(., "Успешно сохранено!")]')
-    image = (By.CSS_SELECTOR, 'input[type="file"]')
+    image = (By.XPATH, '(//input[@type="file"])[1]')
     description_text_area = (By.XPATH, '//*[contains(@class, \'note-editable\')]')
     classic_radio_btn = (By.XPATH, '//*[contains(@class, "is_france_system_qualification0")]')
     france_system_radio_btn = (By.XPATH, '//*[contains(@class, "is_france_system_qualification1")]')

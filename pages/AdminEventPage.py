@@ -22,7 +22,7 @@ class AdminEventPage(BasePage):
 
     def fill_field_dinamic(self, field: str, value: str, type=By.ID) -> None:
         element = (type, f'{field}')
-        self.fill_field(element, value, clear=False)
+        self.fill_field(element, value, clear=True)
 
     def fill_field_description(self, value: str) -> None:
         self.fill_field(AdminEventPageLocators.description_text_area, value)
@@ -292,3 +292,7 @@ class AdminEventPage(BasePage):
             self.wait_and_click(AdminEventPageLocators.checkbox_is_public_off)
         if 'on' == state:
             self.wait_and_click(AdminEventPageLocators.checkbox_is_public_on)
+
+    def fill_field_climbing_gym(self, text):
+        self.fill_field(AdminEventPageLocators.field_climbing_gym, text)
+
