@@ -37,7 +37,6 @@ class EventPage(BasePage):
         select.select_by_index(set)
 
     def select_changed_sets(self, set_take_part: int):
-        self.driver.execute_script('window.location.reload();')
         select = Select(self.driver.find_element(*EventPageLocators.select_changed_sets))
         select.select_by_index(set_take_part)
 
