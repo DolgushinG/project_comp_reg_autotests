@@ -16,6 +16,7 @@ def get_options(browser_name: str) -> Any:
         return chrome_options
     if browser_name == 'firefox':
         firefox_options = FirefoxOptions()
+        firefox_options.add_argument("--headless")
         firefox_options.add_argument("--no-sandbox")
         firefox_options.add_argument("--disable-gpu")
         firefox_options.add_argument("--disable-extensions")
