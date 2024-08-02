@@ -2,9 +2,7 @@ import time
 
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.select import Select
-
 from locators.EventPageLocators import EventPageLocators
-from locators.RegistrationFormLocators import RegistrationForm
 from pages.BasePage import BasePage
 
 
@@ -29,19 +27,21 @@ class EventPage(BasePage):
         self.wait_and_click(EventPageLocators.btn_price)
 
     def select_category(self):
+        self.wait_element(EventPageLocators.select_category)
         select = Select(self.driver.find_element(*EventPageLocators.select_category))
         select.select_by_index(1)
 
-    def select_sets(self, set: int):
-        select = Select(self.driver.find_element(*EventPageLocators.select_sets))
-        select.select_by_index(set)
+    def select_sets(self):
+        Select(self.driver.find_element(*EventPageLocators.select_sets)).first_selected_option
 
     def select_changed_sets(self, set_take_part: int):
+        self.wait_element(EventPageLocators.select_changed_sets)
         select = Select(self.driver.find_element(*EventPageLocators.select_changed_sets))
         select.select_by_index(set_take_part)
 
     def click_btn_take_part(self):
-        self.wait_and_click(EventPageLocators.btn_take_part)
+        self.wait_element(EventPageLocators.btn_take_part)
+        self.driver.execute_script("document.getElementById('btn-participant').click()")
 
     def select_birthday(self):
         if self.element_visible(EventPageLocators.birthday):
