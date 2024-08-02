@@ -12,7 +12,7 @@ from pages.ProfilePage import ProfilePage
 @pytest.mark.usefixtures("driver")
 class TestEvent:
     @pytest.mark.event
-    def test_open_event(self):
+    def test_open_event(self, login_to_admin):
         event_form = EventPage(self.driver)
         admin_event_form = AdminEventPage(self.driver)
         admin_event_form.go_to_url(f'{URL}/admin/events')
