@@ -4,7 +4,6 @@ from dataclasses import dataclass
 from datetime import datetime
 
 import pytest
-from selenium import webdriver
 
 import tools
 from config.drivers import get_driver
@@ -25,7 +24,7 @@ BROWSER_NAME = ''
 @pytest.fixture(scope="function", autouse=True)
 def driver(request):
     options = get_options(BROWSER_NAME)
-    driver = get_driver(browser_name=BROWSER_NAME, driver=webdriver, options=options)
+    driver = get_driver(browser_name=BROWSER_NAME, options=options)
     driver.implicitly_wait(10)
     request.cls.driver = driver
     yield request.cls.driver
@@ -39,7 +38,7 @@ def pytest_configure(config):
 
 @pytest.hookimpl
 def pytest_addoption(parser):
-    parser.addoption('--browser', action='store', default="firefox", help="Choose browser: chrome")
+    parser.addoption('--browser', action='store', default="chrome", help="Choose browser: chrome")
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)

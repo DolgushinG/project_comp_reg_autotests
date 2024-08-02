@@ -1,11 +1,17 @@
-from selenium.webdriver.chrome.service import Service as ChromeService
+import os
+
 from selenium.webdriver.chrome.service import Service as FirefoxService
-from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.firefox import GeckoDriverManager
-
-
-def get_driver(browser_name: str, driver, options):
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+def get_driver(browser_name: str, options):
     if browser_name == 'chrome':
-        return driver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+        service = Service(ChromeDriverManager().install())
+        path = service.path
+        service.path = path.replace('THIRD_PARTY_NOTICES.', "")
+        os.chmod(service.path, 0o755)
+        return webdriver.Chrome(service=service, options=options)
     if browser_name == 'firefox':
-        return driver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
+        return webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)

@@ -32,7 +32,8 @@ class EventPage(BasePage):
         select.select_by_index(1)
 
     def select_sets(self):
-        Select(self.driver.find_element(*EventPageLocators.select_sets)).first_selected_option
+        select = Select(self.driver.find_element(*EventPageLocators.select_sets))
+        select.select_by_index(2)
 
     def select_changed_sets(self, set_take_part: int):
         self.wait_element(EventPageLocators.select_changed_sets)
