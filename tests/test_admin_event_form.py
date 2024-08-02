@@ -554,6 +554,7 @@ class TestAdminEventForm:
         event_form.go_to_url(f'{URL}/')
         event_form.click_event_with_js()
         event_form.click_list_participant()
+        time.sleep(2)
         event_form.verify_list_participant()
         admin_event_form.go_to_url(f'{URL}/admin/events')
         admin_event_form.verify_events()

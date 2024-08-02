@@ -3,6 +3,7 @@ import time
 import pytest
 
 from constants import URL, DEFAULT_USER
+from pages.AdminEventPage import AdminEventPage
 from pages.EventPage import EventPage
 from pages.LoginFormPage import LoginFormPage
 from pages.ProfilePage import ProfilePage
@@ -13,7 +14,16 @@ class TestEvent:
     @pytest.mark.event
     def test_open_event(self):
         event_form = EventPage(self.driver)
+        admin_event_form = AdminEventPage(self.driver)
+        admin_event_form.go_to_url(f'{URL}/admin/events')
+        time.sleep(3)
+        admin_event_form.click_to('Редактировать', 'a', 1)
+        admin_event_form.click_btn_tab_control()
+        admin_event_form.scroll_down()
+        admin_event_form.click_is_public('on')
+        admin_event_form.click_btn_submit()
         event_form.go_to_url(f'{URL}/')
+        time.sleep(2)
         event_form.click_event_with_js()
         event_form.click_nav_main_info()
         event_form.click_nav_rules()
