@@ -22,7 +22,7 @@ class TestEvent:
         admin_event_form.scroll_down()
         admin_event_form.click_is_public('on')
         admin_event_form.click_btn_submit()
-        event_form.go_to_url(f'{URL}/event/1990-06-11/admin/competition')
+        event_form.click_event_with_js()
         event_form.click_nav_main_info()
         event_form.click_nav_rules()
         event_form.click_nav_price()
