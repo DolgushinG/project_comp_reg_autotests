@@ -11,6 +11,7 @@ class EventPage(BasePage):
         super().__init__(driver)
 
     def click_nav_main_info(self):
+        self.wait_element(EventPageLocators.btn_main_info)
         self.wait_and_click(EventPageLocators.btn_main_info)
 
     def click_event_with_js(self):
