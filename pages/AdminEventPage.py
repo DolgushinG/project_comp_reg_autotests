@@ -296,3 +296,6 @@ class AdminEventPage(BasePage):
     def fill_field_climbing_gym(self, text):
         self.fill_field(AdminEventPageLocators.field_climbing_gym, text)
 
+    def click_add_autocategories(self):
+        self.wait_and_click(AdminEventPageLocators.btn_add_autocategories)
+

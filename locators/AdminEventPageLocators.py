@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
+    btn_add_autocategories = (By.XPATH, '//div[contains(@id, \'has-many-options_categories\')]//div[contains(text(), "Добавить")]')
     field_climbing_gym = (By.XPATH, '(//input[@id="climbing_gym_name"])[2]')
     checkbox_is_public_on = (By.XPATH, "//input[contains(@class,'is_public') and @type='checkbox']/../span[contains(@class, 'bootstrap-switch-handle-off bootstrap-switch-default')]")
     checkbox_is_public_off = (By.XPATH, "//input[contains(@class,'is_public') and @type='checkbox']/../span[contains(@class, 'bootstrap-switch-handle-on bootstrap-switch-success')]")
