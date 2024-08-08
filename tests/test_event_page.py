@@ -23,7 +23,7 @@ class TestEvent:
         admin_event_form.click_is_public('on')
         admin_event_form.click_btn_submit()
         event_form.go_to_url(f'{URL}/event/2024-07-31/admin/competition')
-        time.sleep(2)
+        time.sleep(5)
         event_form.click_nav_main_info()
         event_form.click_nav_rules()
         event_form.click_nav_price()
