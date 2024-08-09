@@ -30,24 +30,21 @@ class TestEvent:
     @pytest.mark.event
     def test_open_list_participant(self):
         event_form = EventPage(self.driver)
-        event_form.go_to_url(f'{URL}/')
-        event_form.click_event_with_js()
+        event_form.go_to_url(f'{URL}/admin/event/2024-07-31/admin/competition')
         event_form.click_list_participant()
         event_form.verify_list_participant()
 
     @pytest.mark.event
     def test_open_qualification_results(self):
         event_form = EventPage(self.driver)
-        event_form.go_to_url(f'{URL}/')
-        event_form.click_event_with_js()
+        event_form.go_to_url(f'{URL}/admin/event/2024-07-31/admin/competition')
         event_form.click_qualification_results()
         event_form.verify_qualification_results()
 
     @pytest.mark.event
     def test_take_part(self, reg):
         event_form = EventPage(self.driver)
-        event_form.go_to_url(f'{URL}/')
-        event_form.click_event_with_js()
+        event_form.go_to_url(f'{URL}/admin/event/2024-07-31/admin/competition')
         time.sleep(3)
         event_form.select_category()
         time.sleep(3)
@@ -60,8 +57,7 @@ class TestEvent:
     @pytest.mark.event
     def test_change_set(self, reg):
         event_form = EventPage(self.driver)
-        event_form.go_to_url(f'{URL}/')
-        event_form.click_event_with_js()
+        event_form.go_to_url(f'{URL}/admin/event/2024-07-31/admin/competition')
         time.sleep(2)
         event_form.select_category()
         time.sleep(2)
@@ -82,8 +78,7 @@ class TestEvent:
     @pytest.mark.event
     def test_send_result(self, reg):
         event_form = EventPage(self.driver)
-        event_form.go_to_url(f'{URL}/')
-        event_form.click_event_with_js()
+        event_form.go_to_url(f'{URL}/admin/event/2024-07-31/admin/competition')
         time.sleep(2)
         event_form.select_category()
         time.sleep(2)
@@ -101,8 +96,7 @@ class TestEvent:
     @pytest.mark.event
     def test_edit_result_after_send_result(self, reg):
         event_form = EventPage(self.driver)
-        event_form.go_to_url(f'{URL}/')
-        event_form.click_event_with_js()
+        event_form.go_to_url(f'{URL}/admin/event/2024-07-31/admin/competition')
         time.sleep(2)
         event_form.select_category()
         time.sleep(2)
