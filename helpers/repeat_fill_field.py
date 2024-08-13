@@ -20,5 +20,5 @@ def repeat_fill_fields(driver):
     admin_event_form.click_btn_tab_pay()
     admin_event_form.fill_field_dinamic(field='link_payment', value="https://ya.ru")
     admin_event_form.fill_field_dinamic(field='amount_start_price', value="1200")
-    admin_event_form.fill_field_dinamic(field='[name="info_payment"]', value="long text", type=By.CSS_SELECTOR)
+    admin_event_form.fill_field((By.XPATH,'(//div[contains(@class, "note-editable")])[2]'), "text")
     return admin_event_form
