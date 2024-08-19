@@ -94,3 +94,11 @@ class ProfilePage(BasePage):
         self.click(Profile.input_sport_category)
         self.wait_and_click(Profile.sport_category_1)
 
+    def click_nav_analytics(self):
+        self.wait_and_click(Profile.nav_analytics)
+
+    def verify_analytics(self):
+        self.wait_element(Profile.title_analytics)
+        assert self.element_visible(Profile.title_analytics)
+        time.sleep(1)
+

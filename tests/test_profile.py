@@ -17,6 +17,8 @@ class TestProfileForm:
         profile_page.verify_profile()
         profile_page.click_nav_events()
         profile_page.verify_events()
+        profile_page.click_nav_analytics()
+        profile_page.verify_analytics()
         profile_page.click_nav_password()
         profile_page.verify_settings()
         profile_page.click_nav_edit()

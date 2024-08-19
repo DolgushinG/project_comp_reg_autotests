@@ -2,6 +2,8 @@ from selenium.webdriver.common.by import By
 
 
 class Profile:
+    title_analytics = (By.XPATH, '//*[contains(text(), "Высокий коэффициент")]')
+    nav_analytics = (By.ID, 'analytics')
     nav_profile = (By.ID, 'overview')
     title_profile = (By.XPATH, '//h6[contains(., \'Команда\')]')
     nav_events = (By.ID, 'events')
