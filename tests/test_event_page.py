@@ -11,6 +11,7 @@ from pages.ProfilePage import ProfilePage
 
 @pytest.mark.usefixtures("driver")
 class TestEvent:
+    add_url = "/admin/event/2024-12-31/admin/competition"
     @pytest.mark.event
     def test_open_event(self, login_to_admin):
         event_form = EventPage(self.driver)
@@ -22,7 +23,7 @@ class TestEvent:
         admin_event_form.scroll_down()
         admin_event_form.click_is_public('on')
         admin_event_form.click_btn_submit()
-        event_form.go_to_url(f'{URL}/admin/event/2024-07-31/admin/competition')
+        event_form.go_to_url(f'{URL}{self.add_url}')
         event_form.click_nav_main_info()
         event_form.click_nav_rules()
         event_form.click_nav_price()
@@ -30,21 +31,21 @@ class TestEvent:
     @pytest.mark.event
     def test_open_list_participant(self):
         event_form = EventPage(self.driver)
-        event_form.go_to_url(f'{URL}/admin/event/2024-07-31/admin/competition')
+        event_form.go_to_url(f'{URL}{self.add_url}')
         event_form.click_list_participant()
         event_form.verify_list_participant()
 
     @pytest.mark.event
     def test_open_qualification_results(self):
         event_form = EventPage(self.driver)
-        event_form.go_to_url(f'{URL}/admin/event/2024-07-31/admin/competition')
+        event_form.go_to_url(f'{URL}{self.add_url}')
         event_form.click_qualification_results()
         event_form.verify_qualification_results()
 
     @pytest.mark.event
     def test_take_part(self, reg):
         event_form = EventPage(self.driver)
-        event_form.go_to_url(f'{URL}/admin/event/2024-07-31/admin/competition')
+        event_form.go_to_url(f'{URL}{self.add_url}')
         time.sleep(3)
         event_form.select_category()
         time.sleep(3)
@@ -57,7 +58,7 @@ class TestEvent:
     @pytest.mark.event
     def test_change_set(self, reg):
         event_form = EventPage(self.driver)
-        event_form.go_to_url(f'{URL}/admin/event/2024-07-31/admin/competition')
+        event_form.go_to_url(f'{URL}{self.add_url}')
         time.sleep(2)
         event_form.select_category()
         time.sleep(2)
@@ -78,7 +79,7 @@ class TestEvent:
     @pytest.mark.event
     def test_send_result(self, reg):
         event_form = EventPage(self.driver)
-        event_form.go_to_url(f'{URL}/admin/event/2024-07-31/admin/competition')
+        event_form.go_to_url(f'{URL}{self.add_url}')
         time.sleep(2)
         event_form.select_category()
         time.sleep(2)
@@ -96,7 +97,7 @@ class TestEvent:
     @pytest.mark.event
     def test_edit_result_after_send_result(self, reg):
         event_form = EventPage(self.driver)
-        event_form.go_to_url(f'{URL}/admin/event/2024-07-31/admin/competition')
+        event_form.go_to_url(f'{URL}{self.add_url}')
         time.sleep(2)
         event_form.select_category()
         time.sleep(2)
