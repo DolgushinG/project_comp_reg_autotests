@@ -47,6 +47,7 @@ class ProfilePage(BasePage):
         time.sleep(1)
 
     def verify_edit(self):
+        time.sleep(1)
         self.wait_element(Profile.title_edit)
         assert self.element_visible(Profile.title_edit)
         time.sleep(1)
