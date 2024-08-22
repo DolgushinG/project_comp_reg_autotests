@@ -23,6 +23,7 @@ class ProfilePage(BasePage):
         self.wait_and_click(Profile.nav_settings)
 
     def click_nav_edit(self):
+        time.sleep(2)
         self.wait_and_click(Profile.nav_edit)
         self.click(Profile.nav_edit)
 
