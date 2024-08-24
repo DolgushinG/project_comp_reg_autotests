@@ -206,6 +206,9 @@ class AdminEventPage(BasePage):
     def verify_result_final(self):
         assert 0 < len(self.find_elements(AdminEventPageLocators.result_final)), f'results_final not found'
 
+    def page_reload(self):
+        self.driver.refresh()
+
     def diactivate_old_event(self):
         time.sleep(1)
         self.wait_and_click(AdminEventPageLocators.event_competition_yes)
