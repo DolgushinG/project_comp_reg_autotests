@@ -92,6 +92,7 @@ class TestAdminEventForm:
         admin_event_form.go_to_qualification()
         admin_event_form.verify_qualification()
         admin_event_form.click_to_analytics()
+        time.sleep(10)
         admin_event_form.verify_analytics()
         admin_event_form.go_to_semifinal()
         admin_event_form.verify_semifinal()
