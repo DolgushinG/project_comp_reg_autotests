@@ -2,6 +2,11 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
+    open_table_analytics = (By.XPATH, '//a[contains(text(), "competition")]')
+    analytics_table = (By.CSS_SELECTOR, '[class="dataTables_wrapper form-inline dt-bootstrap no-footer"]')
+    btn_analytics = (By.XPATH, '//span[contains(text(), "Аналитика")]')
+    checkbox_is_public_analytics_on = (By.XPATH, "//input[contains(@class,'is_open_public_analytics') and @type='checkbox']/../span[contains(@class, 'bootstrap-switch-handle-off bootstrap-switch-default')]")
+    checkbox_is_full_results_on = (By.XPATH, "//input[contains(@class,'is_open_send_result_state') and @type='checkbox']/../span[contains(@class, 'bootstrap-switch-handle-off bootstrap-switch-default')]")
     btn_add_autocategories = (By.XPATH, '//div[contains(@id, \'has-many-options_categories\')]//div[contains(text(), "Добавить")]')
     field_climbing_gym = (By.XPATH, '(//input[@id="climbing_gym_name"])[2]')
     checkbox_is_public_on = (By.XPATH, "//input[contains(@class,'is_public') and @type='checkbox']/../span[contains(@class, 'bootstrap-switch-handle-off bootstrap-switch-default')]")
@@ -60,7 +65,7 @@ class AdminEventPageLocators:
     nav_main = (By.XPATH, '//span[contains(text(), "Главная")]')
     user_name = (By.CSS_SELECTOR, 'input[name="username"]')
     password = (By.CSS_SELECTOR, 'input[name="password"]')
-    btn_submit = (By.ID, 'create-event')
+    btn_submit = (By.CSS_SELECTOR, '[id=create-event]')
     btn_enter = (By.CSS_SELECTOR, 'button[type="submit"]')
     btn_tab_pay = (By.CSS_SELECTOR, '[href="#tab-form-2"]')
     btn_tab_control = (By.CSS_SELECTOR, '[href="#tab-form-4"]')

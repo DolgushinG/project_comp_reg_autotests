@@ -39,6 +39,7 @@ class AdminEventPage(BasePage):
 
     def click_btn_submit(self) -> None:
         self.scroll_down()
+        time.sleep(2)
         self.wait_and_click(AdminEventPageLocators.btn_submit)
 
     def click_btn_enter(self) -> None:
@@ -301,4 +302,18 @@ class AdminEventPage(BasePage):
 
     def click_add_autocategories(self):
         self.wait_and_click(AdminEventPageLocators.btn_add_autocategories)
+
+    def click_is_public_analytics(self):
+        self.wait_and_click(AdminEventPageLocators.checkbox_is_public_analytics_on)
+
+    def click_is_full_results(self):
+        self.wait_and_click(AdminEventPageLocators.checkbox_is_full_results_on)
+
+    def click_to_analytics(self):
+        self.wait_and_click(AdminEventPageLocators.btn_analytics)
+        time.sleep(2)
+        self.click(AdminEventPageLocators.open_table_analytics)
+
+    def verify_analytics(self):
+        self.wait_element(AdminEventPageLocators.analytics_table, 100)
 

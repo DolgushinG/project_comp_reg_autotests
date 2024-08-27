@@ -100,3 +100,9 @@ class EventPage(BasePage):
     def click_all_flash(self):
         self.wait_and_click(EventPageLocators.btn_all_flash)
 
+    def click_analytics(self):
+        self.wait_and_click(EventPageLocators.btn_analytics)
+
+    def verify_title_analytics(self):
+        assert len(self.find_elements(EventPageLocators.title_analytics)) > 0, f'body analytics not found'
+

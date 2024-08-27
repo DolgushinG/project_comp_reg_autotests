@@ -2,6 +2,8 @@ from selenium.webdriver.common.by import By
 
 
 class EventPageLocators:
+    title_analytics = (By.CSS_SELECTOR, '[id="dataTableBody"] tr')
+    btn_analytics = (By.XPATH, '//a[contains(., "Статистика")]')
     btn_edit_result = (By.XPATH, '//a[contains(., "Изменить результаты")]')
     btn_all_flash =(By.ID, 'all-flash')
     select_number_route_3 = (By.XPATH, '(//*[@id="show_final_route_id_1"])[2]')
