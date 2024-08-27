@@ -578,7 +578,8 @@ class TestAdminEventForm:
         admin_event_form.scroll_down()
         admin_event_form.click_is_public('on')
         admin_event_form.click_btn_submit()
-
+        
+    @pytest.mark.admin
     def test_event_classic_checking_public_analytics(self, login_to_admin):
         repeat_fill_fields(self.driver)
         event_form = EventPage(self.driver)
