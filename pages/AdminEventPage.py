@@ -317,3 +317,7 @@ class AdminEventPage(BasePage):
     def verify_analytics(self):
         self.wait_element(AdminEventPageLocators.analytics_table, 100)
 
+    def click_to_open_send_result(self):
+        self.wait_and_click(AdminEventPageLocators.btn_send_result_on)
+    def click_to_close_send_result(self):
+        self.wait_and_click(AdminEventPageLocators.btn_send_result_off)
