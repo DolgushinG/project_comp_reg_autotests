@@ -500,6 +500,7 @@ class TestAdminEventForm:
         admin_event_form.click_to('Отправить', 'button', 5)
         admin_event_form.page_reload()
         admin_event_form.verify_result_final()
+        time.sleep(3)
         admin_event_form.click_to('Редактировать', 'a', 1)
         admin_event_form.click_to('Отправить', 'button', 1)
         admin_event_form.verify_title_success_create()
