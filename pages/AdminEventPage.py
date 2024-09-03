@@ -205,6 +205,7 @@ class AdminEventPage(BasePage):
             self.click_to('OK', 'button')
 
     def verify_result_final(self):
+        self.page_reload()
         assert 0 < len(self.find_elements(AdminEventPageLocators.result_final)), f'results_final not found'
 
     def page_reload(self):
