@@ -26,6 +26,7 @@ class AdminEventPage(BasePage):
 
     def click_btn_send_generate_participant(self):
         self.wait_and_click(AdminEventPageLocators.btn_send_generate_participant)
+
     def fill_field_description(self, value: str) -> None:
         self.fill_field(AdminEventPageLocators.description_text_area, value)
 
@@ -139,6 +140,7 @@ class AdminEventPage(BasePage):
     def verify_title_success_create(self) -> None:
         self.wait_element(AdminEventPageLocators.title_success_create, 10)
         assert self.element_visible(AdminEventPageLocators.title_success_create)
+        self.driver.refresh(0)
 
     def go_to_main(self):
         self.wait_and_click(AdminEventPageLocators.nav_main)

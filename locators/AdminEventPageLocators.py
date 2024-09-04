@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
-    btn_send_generate_participant = (By.XPATH, 'div[id="app-admin-actions-batchgenerateparticipant"] button[type="submit"]')
+    btn_send_generate_participant = (By.CSS_SELECTOR, 'div[id="app-admin-actions-batchgenerateparticipant"] button[type="submit"]')
     btn_send_result_off = (By.XPATH, "//input[contains(@class,'is_send_result_state') and @type='checkbox']/../span[contains(@class, 'bootstrap-switch-handle-on bootstrap-switch-success')]")
     btn_send_result_on = (By.XPATH, "//input[contains(@class,'is_send_result_state') and @type='checkbox']/../span[contains(@class, 'bootstrap-switch-handle-off bootstrap-switch-default')]")
     open_table_analytics = (By.XPATH, '//a[contains(text(), "competition")]')
