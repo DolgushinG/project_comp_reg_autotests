@@ -140,7 +140,7 @@ class AdminEventPage(BasePage):
     def verify_title_success_create(self) -> None:
         self.wait_element(AdminEventPageLocators.title_success_create, 10)
         assert self.element_visible(AdminEventPageLocators.title_success_create)
-        self.driver.refresh(0)
+        self.driver.refresh()
 
     def go_to_main(self):
         self.wait_and_click(AdminEventPageLocators.nav_main)
