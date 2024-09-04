@@ -194,7 +194,7 @@ class TestAdminEventForm:
         admin_event_form.verify_setting_routes()
         admin_event_form.click_to(' Настроить кол-во трасс', 'a')
         admin_event_form.fill_field_dinamic('count_routes', '10')
-        admin_event_form.click_to('Отправить', 'button')
+        admin_event_form.click_btn_send_generate_participant()
         time.sleep(5)
         admin_event_form.verify_title_success_create()
         admin_event_form.go_to_qualification()

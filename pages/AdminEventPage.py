@@ -24,6 +24,8 @@ class AdminEventPage(BasePage):
         element = (type, f'{field}')
         self.fill_field(element, value, clear=True)
 
+    def click_btn_send_generate_participant(self):
+        self.wait_and_click(AdminEventPageLocators.btn_send_generate_participant)
     def fill_field_description(self, value: str) -> None:
         self.fill_field(AdminEventPageLocators.description_text_area, value)
 
