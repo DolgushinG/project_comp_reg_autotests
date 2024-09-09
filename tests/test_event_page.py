@@ -69,7 +69,7 @@ class TestEvent:
         event_form.verify_success_take_part()
         grab_set = event_form.grab_info_sets()
         time.sleep(1)
-        event_form.select_changed_sets(3)
+        event_form.select_changed_sets(5)
         time.sleep(1)
         event_form.click_btn_changed_set()
         time.sleep(1)
