@@ -14,7 +14,7 @@ class Profile:
     input_team = (By.ID, 'team')
     input_birthday = (By.ID, 'birthday')
     input_sport_category = (By.CSS_SELECTOR, "[name='sport_category']")
-    sport_category_1 = (By.XPATH, '//*[contains(., "I разряд")]')
+    sport_category_1 = (By.XPATH, '//*[contains(., "1 юн.р.")]')
     input_gender = (By.ID, 'gender')
     gender_male = (By.XPATH, '//*[contains(., "Муж")]')
     btn_save = (By.ID, 'saveChanges')
