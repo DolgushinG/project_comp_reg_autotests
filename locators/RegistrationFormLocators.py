@@ -2,7 +2,11 @@ from selenium.webdriver.common.by import By
 
 
 class RegistrationForm:
+    btn_submit_group_registration = (By.ID, 'btn-send')
+    text_btn_success_created = (By.XPATH, '//button[contains(text(), "Группа успешно создана и зарегистрирована на соревнование в письме все подробности")]')
     first_name = (By.ID, 'firstname')
+    first_name_group = (By.CSS_SELECTOR, '[name="participants[1][firstname]"')
+    last_name_group = (By.CSS_SELECTOR, '[name="participants[1][lastname]"')
     last_name = (By.ID, 'lastname')
     team = (By.ID, 'team')
     password = (By.ID, 'password')

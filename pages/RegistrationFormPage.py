@@ -18,6 +18,12 @@ class RegistrationFormPage(BasePage):
     def fill_first_name(self, first_name: str) -> None:
         self.fill_field(RegistrationForm.first_name, first_name)
 
+    def fill_first_name_group(self, first_name: str) -> None:
+        self.fill_field(RegistrationForm.first_name_group, first_name)
+
+    def fill_last_name_group(self, last_name: str) -> None:
+        self.fill_field(RegistrationForm.last_name_group, last_name)
+
     def fill_last_name(self, last_name: str) -> None:
         self.fill_field(RegistrationForm.last_name, last_name)
 
@@ -72,6 +78,11 @@ class RegistrationFormPage(BasePage):
         time.sleep(1)
         self.wait_and_click(RegistrationForm.btn_submit)
 
+    def click_btn_submit_group_registration(self) -> None:
+        self.scroll_down()
+        time.sleep(1)
+        self.wait_and_click(RegistrationForm.btn_submit_group_registration)
+
     def verify_confirm_form(self) -> None:
         time.sleep(2)
         assert self.element_visible(RegistrationForm.modal_submitting_form)
@@ -118,3 +129,7 @@ class RegistrationFormPage(BasePage):
         state_and_city = f"{state} {city}"
         text = self.get_text(RegistrationForm.modal_state_and_city)
         assert state_and_city == text, f"EXP - {state_and_city}, REAL - {text}"
+
+    def verify_btn_title_success_creaeted(self):
+        self.try_wait_element(RegistrationForm.text_btn_success_created)
+        assert self.element_visible(RegistrationForm.text_btn_success_created), "text_btn_success_created not found"

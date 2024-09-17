@@ -2,6 +2,10 @@ from selenium.webdriver.common.by import By
 
 
 class EventPageLocators:
+    select_sets_group = (By.ID, 'sets1')
+    btn_add_participant = (By.ID, 'add-participant')
+    title_group_registration = (By.XPATH, '//h1[contains(text(), "Оформление заявки для группы")]')
+    btn_group_registration = (By.ID, 'btn-group-participant')
     title_analytics = (By.CSS_SELECTOR, '[id="dataTableBody"] tr')
     btn_analytics = (By.XPATH, '//a[contains(., "Статистика")]')
     btn_edit_result = (By.XPATH, '//a[contains(., "Изменить результаты")]')
@@ -16,6 +20,7 @@ class EventPageLocators:
     select_number_route = (By.XPATH, "(//span[contains(text(), 'Трасса')])[1]")
     select_number_route_2 = (By.XPATH, "(//span[contains(text(), 'Трасса')])[2]")
     select_sport_category = (By.ID, 'floatingSelectSportCategory')
+    select_group_sport_category = (By.ID, 'sport_categories')
     btn_main_info = (By.XPATH, '//button[contains(text(), \'Общая информация\')]')
     btn_sets = (By.XPATH, "//button[contains(., 'Сеты')]")
     btn_rules = (By.XPATH, '//button[contains(., \'Положение\')]')
@@ -25,6 +30,7 @@ class EventPageLocators:
     qualification_results = (By.XPATH, '//h5[contains(., \'Мужчины\')]')
     list_participants = (By.ID, 'borderedTabJustified')
     select_category = (By.ID, 'floatingSelectCategory')
+    select_category_group = (By.ID, 'category_id')
     select_sets = (By.ID, 'floatingSelect')
     select_changed_sets = (By.ID, 'floatingSelectChangeSet')
     btn_change_set = (By.ID, 'btn-participant-change-set')

@@ -32,6 +32,12 @@ class EventPage(BasePage):
         select = Select(self.driver.find_element(*EventPageLocators.select_category))
         select.select_by_index(1)
 
+    def select_category_group(self):
+        self.wait_element(EventPageLocators.select_category_group)
+        select = Select(self.driver.find_element(*EventPageLocators.select_category_group))
+        select.select_by_index(1)
+
+
     def select_sets(self):
         select = Select(self.driver.find_element(*EventPageLocators.select_sets))
         select.select_by_index(2)
@@ -94,6 +100,10 @@ class EventPage(BasePage):
         select = Select(self.driver.find_element(*EventPageLocators.select_sport_category))
         select.select_by_index(2)
 
+    def select_group_sport_category(self):
+        select = Select(self.driver.find_element(*EventPageLocators.select_group_sport_category))
+        select.select_by_index(2)
+
     def click_edit_result(self):
         self.wait_and_click(EventPageLocators.btn_edit_result)
 
@@ -105,4 +115,18 @@ class EventPage(BasePage):
 
     def verify_title_analytics(self):
         assert len(self.find_elements(EventPageLocators.title_analytics)) > 0, f'body analytics not found'
+
+    def click_to_btn_group_registration(self):
+        self.wait_and_click(EventPageLocators.btn_group_registration)
+
+    def verify_title_group_registration(self):
+        self.try_wait_element(EventPageLocators.title_group_registration)
+        assert self.element_visible(EventPageLocators.title_group_registration), f'title group registration not found'
+
+    def click_add_participant(self):
+        self.wait_and_click(EventPageLocators.btn_add_participant)
+
+    def select_sets_group(self):
+        select = Select(self.driver.find_element(*EventPageLocators.select_sets_group))
+        select.select_by_index(2)
 
