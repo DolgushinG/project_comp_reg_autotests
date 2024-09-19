@@ -40,7 +40,7 @@ class EventPage(BasePage):
 
     def select_sets(self):
         select = Select(self.driver.find_element(*EventPageLocators.select_sets))
-        select.select_by_index(2)
+        select.select_by_index(4)
 
     def select_changed_sets(self, set_take_part: int):
         self.wait_element(EventPageLocators.select_changed_sets)
