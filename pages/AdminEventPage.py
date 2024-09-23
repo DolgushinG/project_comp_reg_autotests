@@ -94,6 +94,14 @@ class AdminEventPage(BasePage):
             time.sleep(1)
             self.wait_and_click(EventPageLocators.pop_up_select_route_index_1)
 
+    def click_to_try(self):
+        self.wait_and_click(AdminEventPageLocators.btn_try)
+
+    def click_to_zone(self):
+        self.wait_and_click(AdminEventPageLocators.btn_zone)
+
+    def click_to_top(self):
+        self.wait_and_click(AdminEventPageLocators.btn_top)
     def fill_field_amount_try_top(self, text):
         self.fill_field(AdminEventPageLocators.field_amount_try_top, text)
 

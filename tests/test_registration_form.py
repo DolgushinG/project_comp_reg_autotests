@@ -26,7 +26,6 @@ class TestRegistrationForm:
         reg_form.click_btn_submit()
         reg_form.verify_profile()
 
-
     @pytest.mark.main
     def test_event_classic_checking_group_registration(self, login):
         event_form = EventPage(self.driver)
