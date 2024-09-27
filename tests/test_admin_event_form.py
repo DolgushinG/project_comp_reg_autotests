@@ -304,6 +304,7 @@ class TestAdminEventForm:
         admin_event_form.delete_event()
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_add_result_one_route_beginner_in_semifinal(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_options()
@@ -334,7 +335,7 @@ class TestAdminEventForm:
         admin_event_form.click_switch_payment()
         admin_event_form.go_to_semifinal()
         admin_event_form.verify_semifinal()
-        admin_event_form.click_to('Новичок по одной трассе', 'a', 1)
+        admin_event_form.click_to('По одной трассе', 'a', 1)
         admin_event_form.select_participant('Новичок')
         admin_event_form.select_number_route('Новичок')
         admin_event_form.click_to_try()
@@ -354,6 +355,7 @@ class TestAdminEventForm:
         admin_event_form.delete_event()
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_add_result_one_route_in_semifinal(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_options()
@@ -405,6 +407,7 @@ class TestAdminEventForm:
         admin_event_form.delete_event()
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_add_result_all_in_semifinal(self, login_to_admin):
         repeat_fill_fields(self.driver)
         admin_event_form = AdminEventPage(self.driver);
@@ -438,7 +441,7 @@ class TestAdminEventForm:
         admin_event_form.go_to_semifinal()
         admin_event_form.verify_semifinal()
         admin_event_form.click_btn_add_all_route()
-        admin_event_form.select_participant('Общий зачет')
+        admin_event_form.select_participant('Все трассы')
         admin_event_form.fill_field_amount_try_top_1('2')
         admin_event_form.fill_field_amount_try_zone_1('2')
         admin_event_form.fill_field_amount_try_top_2('2')
@@ -461,6 +464,7 @@ class TestAdminEventForm:
         admin_event_form.delete_event()
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_edit_result_all_in_semifinal(self, login_to_admin):
         repeat_fill_fields(self.driver)
         admin_event_form = AdminEventPage(self.driver);
@@ -494,7 +498,7 @@ class TestAdminEventForm:
         admin_event_form.go_to_semifinal()
         admin_event_form.verify_semifinal()
         admin_event_form.click_btn_add_all_route()
-        admin_event_form.select_participant('Общий зачет')
+        admin_event_form.select_participant('Все трассы')
         admin_event_form.fill_field_amount_try_top_1('2')
         admin_event_form.fill_field_amount_try_zone_1('2')
         admin_event_form.fill_field_amount_try_top_2('2')

@@ -14,7 +14,7 @@ class EventPageLocators:
     pop_up_select_route_index_1 = (By.XPATH, '//li[contains(text(), \'1\')]')
     pop_up_select_beginner_index_1 = (By.XPATH, '//li[contains(text(), \'Новичок\')]')
     pop_up_select_all_index_1 = (By.XPATH, '//li[contains(text(), \'Общий зачет\')]')
-    select_participant = (By.XPATH, "(//span[contains(@class, 'select2-selection select2-selection--single')])[1]")
+    select_participant = (By.XPATH, "(//span[contains(@class, 'select2-selection select2-selection--single')])[2]")
     select_participant_3 = (By.XPATH, "(//span[contains(@class, 'select2-selection select2-selection--single')])[4]")
     select_participant_4 = (By.XPATH, "(//span[contains(@class, 'select2-selection select2-selection--single')])[6]")
     select_number_route = (By.XPATH, "(//span[contains(@class, 'select2-selection select2-selection--single')])[2]")
