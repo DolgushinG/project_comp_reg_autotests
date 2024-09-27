@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
-    btn_try = (By.XPATH, "//span[contains(text(), 'Попытка')]")
+    btn_try = (By.CSS_SELECTOR, '[class="btn btn-warning"]')
     btn_zone = (By.XPATH, "//span[contains(text(), 'Зона')]")
     btn_top = (By.XPATH, "//span[contains(text(), 'Топ')]")
     btn_send_generate_participant = (By.CSS_SELECTOR, 'div[id="app-admin-actions-batchgenerateparticipant"] button[type="submit"]')

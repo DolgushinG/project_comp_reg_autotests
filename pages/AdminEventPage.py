@@ -95,6 +95,7 @@ class AdminEventPage(BasePage):
             self.wait_and_click(EventPageLocators.pop_up_select_route_index_1)
 
     def click_to_try(self):
+        time.sleep(2)
         self.wait_and_click(AdminEventPageLocators.btn_try)
 
     def click_to_zone(self):
