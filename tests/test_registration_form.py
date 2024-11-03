@@ -35,6 +35,7 @@ class TestRegistrationForm:
         event_form.click_event_with_js()
         event_form.click_to_btn_group_registration()
         event_form.verify_title_group_registration()
+        event_form.scroll_down()
         event_form.click_add_participant()
         reg_form.fill_first_name_group(get_user.firstname)
         reg_form.fill_last_name_group(get_user.lastname)
