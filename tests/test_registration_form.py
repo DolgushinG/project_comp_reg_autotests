@@ -1,12 +1,10 @@
-import time
 
 import pytest
 
-from constants import User, URL, DEFAULT_USER
-from pages.AdminEventPage import AdminEventPage
+from constants import User, URL
 from pages.EventPage import EventPage
 from pages.RegistrationFormPage import RegistrationFormPage
-from tools import random_word, get_email
+from tools import get_email
 
 
 @pytest.mark.usefixtures("driver")

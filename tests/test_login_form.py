@@ -1,5 +1,3 @@
-import time
-
 import pytest
 
 from constants import URL, DEFAULT_USER

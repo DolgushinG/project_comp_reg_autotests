@@ -2,11 +2,9 @@ import time
 
 import pytest
 
-from constants import URL, DEFAULT_USER
+from constants import URL
 from pages.AdminEventPage import AdminEventPage
 from pages.EventPage import EventPage
-from pages.LoginFormPage import LoginFormPage
-from pages.ProfilePage import ProfilePage
 
 
 @pytest.mark.usefixtures("driver")

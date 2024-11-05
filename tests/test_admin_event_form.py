@@ -1,10 +1,9 @@
 import time
 
 import pytest
-from PIL.ImtImagePlugin import field
+
 from selenium.webdriver.common.by import By
 
-from conftest import PROJECT_ROOT
 from constants import URL
 from helpers.repeat_fill_field import repeat_fill_fields
 from pages.AdminEventPage import AdminEventPage
