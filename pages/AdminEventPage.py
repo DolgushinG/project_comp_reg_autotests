@@ -355,3 +355,9 @@ class AdminEventPage(BasePage):
         self.wait_and_click(AdminEventPageLocators.btn_send_result_on)
     def click_to_close_send_result(self):
         self.wait_and_click(AdminEventPageLocators.btn_send_result_off)
+
+    def verify_sets(self):
+        self.wait_element(AdminEventPageLocators.sets_table, 100)
+
+    def go_to_sets(self):
+        self.wait_and_click(AdminEventPageLocators.btn_nav_set)
