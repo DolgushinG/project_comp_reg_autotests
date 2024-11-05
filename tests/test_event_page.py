@@ -9,18 +9,10 @@ from pages.EventPage import EventPage
 
 @pytest.mark.usefixtures("driver")
 class TestEvent:
-    add_url = "/admin/event/2024-12-31/admin/competition"
+    add_url = "/event/1104"
     @pytest.mark.event
-    def test_open_event(self, login_to_admin):
+    def test_open_event(self):
         event_form = EventPage(self.driver)
-        admin_event_form = AdminEventPage(self.driver)
-        admin_event_form.go_to_url(f'{URL}/admin/events')
-        time.sleep(3)
-        admin_event_form.click_to('Редактировать', 'a', 1)
-        admin_event_form.click_btn_tab_control()
-        admin_event_form.scroll_down()
-        admin_event_form.click_is_public('on')
-        admin_event_form.click_btn_submit()
         event_form.go_to_url(f'{URL}{self.add_url}')
         event_form.click_nav_main_info()
         event_form.click_nav_rules()
