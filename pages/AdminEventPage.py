@@ -357,7 +357,7 @@ class AdminEventPage(BasePage):
         self.wait_and_click(AdminEventPageLocators.btn_send_result_off)
 
     def verify_sets(self):
-        self.wait_element(AdminEventPageLocators.sets_table, 100)
+        self.wait_element(AdminEventPageLocators.sets_table)
 
     def go_to_sets(self):
         self.wait_and_click(AdminEventPageLocators.btn_nav_set)
