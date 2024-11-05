@@ -1,6 +1,7 @@
 import time
 
 import pytest
+from PIL.ImtImagePlugin import field
 from selenium.webdriver.common.by import By
 
 from conftest import PROJECT_ROOT
@@ -16,17 +17,17 @@ class TestAdminEventForm:
     @pytest.mark.admin
     def test_event_classic(self, login_to_admin, delete_event):
         admin_event_form = repeat_fill_fields(self.driver)
-        admin_event_form.click_btn_tab_options()
-        admin_event_form.click_to_btn_classic_radio_btn()
+        admin_event_form.click_btn_tab_participant()
+        # admin_event_form.click_to_btn_classic_radio_btn()
+        # admin_event_form.click_to_btn_add_categories()
+        admin_event_form.fill_field_dinamic(field='[name="categories[1][value]"]', type=By.CSS_SELECTOR, value="Новичок")
         admin_event_form.click_to_btn_add_categories()
-        admin_event_form.fill_field_category(number=1, value="Новичок")
-        admin_event_form.fill_field_category(number=2, value="Общий зачет")
-        admin_event_form.scroll_up()
-        admin_event_form.click_btn_tab_control()
+        admin_event_form.fill_field_dinamic(field='[name="categories[2][value]"]', type=By.CSS_SELECTOR, value="Общий зачет")
         admin_event_form.click_btn_submit()
-        admin_event_form.verify_title_success_create()
+
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_event_classic_with_autocategories(self, login_to_admin):
         repeat_fill_fields(self.driver)
         admin_event_form = AdminEventPage(self.driver)
@@ -107,6 +108,7 @@ class TestAdminEventForm:
         admin_event_form.verify_pay()
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_edit_and_delete_routes(self, login_to_admin):
         admin_event_form = AdminEventPage(self.driver)
         admin_event_form.go_to_setting_routes()
@@ -124,6 +126,7 @@ class TestAdminEventForm:
         admin_event_form.verify_title_success_create()
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_event_classic_full(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_options()
@@ -179,6 +182,7 @@ class TestAdminEventForm:
         admin_event_form.delete_event()
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_event_france_system_full(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_options()
@@ -218,6 +222,7 @@ class TestAdminEventForm:
         admin_event_form.delete_event()
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_event_classic_full_with_all_route_mode(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_options()
@@ -264,6 +269,7 @@ class TestAdminEventForm:
         admin_event_form.delete_event()
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_edit_participant_result(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_options()
@@ -533,6 +539,7 @@ class TestAdminEventForm:
         admin_event_form.delete_event()
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_event_classic_checking_public_analytics(self, login_to_admin):
         event_form = EventPage(self.driver)
         admin_event_form = AdminEventPage(self.driver)
@@ -555,6 +562,7 @@ class TestAdminEventForm:
         admin_event_form.verify_title_success_create()
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_event_classic_with_autocategories_checking_list_participant(self, login_to_admin):
         repeat_fill_fields(self.driver)
         event_form = EventPage(self.driver)

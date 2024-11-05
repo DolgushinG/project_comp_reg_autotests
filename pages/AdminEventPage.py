@@ -42,7 +42,6 @@ class AdminEventPage(BasePage):
 
     def click_btn_submit(self) -> None:
         self.scroll_down()
-        time.sleep(2)
         self.wait_and_click(AdminEventPageLocators.btn_submit)
 
     def click_btn_enter(self) -> None:
@@ -76,6 +75,24 @@ class AdminEventPage(BasePage):
             self.wait_and_click(EventPageLocators.select_participant_4)
             time.sleep(1)
             self.wait_and_click(EventPageLocators.pop_up_select_all_index_1)
+
+    def select_participant_pop_up(self):
+        time.sleep(1)
+        self.wait_and_click(EventPageLocators.select_participant)
+        time.sleep(1)
+        self.wait_and_click(EventPageLocators.pop_up_select_participant_index_1)
+
+    def select_group(self):
+        time.sleep(1)
+        self.wait_and_click(EventPageLocators.select_group)
+        time.sleep(1)
+        self.wait_and_click(EventPageLocators.pop_up_select_beginner_index_1)
+
+    def select_gender(self):
+        time.sleep(1)
+        self.wait_and_click(EventPageLocators.select_gender)
+        time.sleep(1)
+        self.wait_and_click(EventPageLocators.pop_up_select_gender_index_1)
 
     def select_number_route(self, category) -> None:
         if category == "Новичок":
@@ -120,8 +137,11 @@ class AdminEventPage(BasePage):
     def click_btn_tab_control(self) -> None:
         self.wait_and_click(AdminEventPageLocators.btn_tab_control)
 
-    def click_btn_tab_options(self) -> None:
-        self.wait_and_click(AdminEventPageLocators.btn_tab_options)
+    def click_btn_tab_participant(self) -> None:
+        self.wait_and_click(AdminEventPageLocators.btn_tab_participant)
+
+    def click_btn_tab_btn_tab_afisha(self) -> None:
+        self.wait_and_click(AdminEventPageLocators.btn_tab_afisha)
 
     def click_to_btn_classic_radio_btn(self) -> None:
         self.wait_and_click(AdminEventPageLocators.classic_radio_btn)

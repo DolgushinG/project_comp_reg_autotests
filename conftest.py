@@ -107,7 +107,7 @@ def reg(request):
 @pytest.fixture()
 def login_to_admin(request):
     admin_event_form = AdminEventPage(request.cls.driver)
-    admin_event_form.go_to_url(f'{URL}/admin')
+    admin_event_form.go_to_url(f'{URL}/moon')
     admin_event_form.fill_username('Tester2')
     admin_event_form.fill_password('Tester3')
     admin_event_form.click_btn_enter()
