@@ -10,6 +10,6 @@ def repeat_fill_fields(driver):
     admin_event_form.fill_field_dinamic(field='climbing_gym_name', value="skalodrom")
     admin_event_form.fill_field_dinamic(field='city', value="Москва")
     admin_event_form.fill_field_dinamic(field='address', value="Москва")
-    admin_event_form.fill_field_dinamic(field='[name="dates[start_date]"]', type=By.CSS_SELECTOR ,value="20-04-2024")
-    admin_event_form.fill_field_dinamic(field='[name="dates[end_date]"]', type=By.CSS_SELECTOR ,value="20-04-2026")
+    admin_event_form.fill_field_dinamic(field='start_date', type=By.ID ,value="20-04-2024")
+    admin_event_form.fill_field_dinamic(field='end_date', type=By.ID ,value="20-04-2026")
     return admin_event_form

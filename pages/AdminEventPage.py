@@ -234,8 +234,6 @@ class AdminEventPage(BasePage):
         time.sleep(1)
         if self.element_visible(AdminEventPageLocators.event_festival_2024):
             self.wait_and_click(AdminEventPageLocators.event_festival_2024)
-            self.click_to('Подтвердить', 'button')
-            self.click_to('OK', 'button')
 
     def verify_result_final(self):
         self.page_reload()
