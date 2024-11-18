@@ -17,6 +17,7 @@ class TestAdminEventForm:
     def test_event_classic(self, login_to_admin, delete_event):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_participant()
+        admin_event_form.click_select_tab_participant()
         admin_event_form.click_to('Добавить', 'a', index=6)
         admin_event_form.fill_field_dinamic(field='[name="categories[1][category]"]', type=By.CSS_SELECTOR, value="Новичок")
         admin_event_form.click_to('Добавить', 'a', index=6)
