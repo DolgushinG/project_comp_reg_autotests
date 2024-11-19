@@ -140,11 +140,6 @@ class AdminEventPage(BasePage):
     def click_btn_tab_participant(self) -> None:
         self.wait_and_click(AdminEventPageLocators.btn_tab_participant)
 
-    def click_select_tab_participant(self) -> None:
-        self.wait_and_click(AdminEventPageLocators.select_tab_participant)
-        time.sleep(1)
-        self.wait_and_click(AdminEventPageLocators.select_manual_participant)
-
     def click_btn_tab_btn_tab_afisha(self) -> None:
         self.wait_and_click(AdminEventPageLocators.btn_tab_afisha)
 

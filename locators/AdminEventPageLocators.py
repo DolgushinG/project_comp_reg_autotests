@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
-    select_manual_participant = (By.XPATH, '//*[contains(text(), " Участник сам определяет")]')
     btn_nav_set = (By.XPATH, '//*[contains(text(), "Сеты")]')
     sets_table = (By.XPATH, '//h1[contains(text(), "Настройка сетов")]')
     btn_try = (By.CSS_SELECTOR, '[class="btn btn-warning"]')
@@ -77,8 +76,7 @@ class AdminEventPageLocators:
     btn_submit = (By.CSS_SELECTOR, '[type="submit"]')
     btn_enter = (By.CSS_SELECTOR, 'button[type="submit"]')
     btn_tab_control = (By.XPATH, '//button[contains(text(), "Управление")]')
-    btn_tab_participant = (By.XPATH, '//button[contains(., "Участники")]')
-    select_tab_participant = (By.ID, 'is_auto_categories')
+    btn_tab_participant = (By.XPATH, '//button[contains(text(), "Участники")]')
     btn_tab_format = (By.XPATH, '//button[contains(text(), "Настройка формата")]')
     btn_tab_pay = (By.XPATH, '//button[contains(text(), "Настройка оплаты")]')
     btn_tab_doc = (By.XPATH, '//button[contains(text(), "Положение")]')
