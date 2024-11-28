@@ -20,7 +20,7 @@ class EventPageLocators:
     select_number_route = (By.XPATH, "(//span[contains(@class, 'select2-selection select2-selection--single')])[2]")
     select_number_route_2 = (By.XPATH, "(//span[contains(@class, 'select2-selection select2-selection--single')])[5]")
     select_sport_category = (By.ID, 'floatingSelectSportCategory')
-    select_group_sport_category = (By.ID, 'sport_categories')
+    select_group_sport_category = (By.ID, 'sport_category')
     btn_main_info = (By.XPATH, '//button[contains(text(), \'Общая информация\')]')
     btn_sets = (By.XPATH, "//button[contains(., 'Сеты')]")
     btn_rules = (By.XPATH, '//button[contains(., \'Положение\')]')
