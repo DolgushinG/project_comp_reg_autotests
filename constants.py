@@ -4,7 +4,7 @@ from dataclasses import dataclass
 import tools
 username = "climb" #stands for !@user
 password = "tester" #stands for ^&pass
-webpage = "stage-dev.climbing-events.ru"
+webpage = "stage-dev.climbing-events.ru:8443"
 
 URL = f'https://{webpage}'
 
