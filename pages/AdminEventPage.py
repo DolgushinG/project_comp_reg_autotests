@@ -230,10 +230,10 @@ class AdminEventPage(BasePage):
         self.driver.execute_script("window.scrollTo(0, document.body.scrollTop);")
         time.sleep(1)
 
-    def delete_event(self):
-        time.sleep(1)
-        if self.element_visible(AdminEventPageLocators.event_festival_2024):
-            self.wait_and_click(AdminEventPageLocators.event_festival_2024)
+    def delete_index_event(self):
+        time.sleep(2)
+        self.wait_and_click(AdminEventPageLocators.btn_delete_event)
+
 
     def verify_result_final(self):
         self.page_reload()
@@ -246,13 +246,9 @@ class AdminEventPage(BasePage):
         time.sleep(1)
         self.wait_and_click(AdminEventPageLocators.event_competition_yes)
 
-    def diactivate_new_event(self):
+    def activate_event(self):
         time.sleep(1)
-        self.wait_and_click(AdminEventPageLocators.event_festival_2024_yes)
-
-    def activate_new_event(self):
-        time.sleep(1)
-        self.wait_and_click(AdminEventPageLocators.event_festival_2024_no)
+        self.wait_and_click(AdminEventPageLocators.event_active)
 
     def activate_old_event(self):
         time.sleep(1)
@@ -359,3 +355,6 @@ class AdminEventPage(BasePage):
 
     def go_to_sets(self):
         self.wait_and_click(AdminEventPageLocators.btn_nav_set)
+
+    def click_btn_delete_event(self):
+        self.wait_and_click(AdminEventPageLocators.btn_delete_event)

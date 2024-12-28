@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
+    btn_delete_event = (By.CSS_SELECTOR, '[data-async-method="DELETE"]')
     btn_nav_set = (By.XPATH, '//*[contains(text(), "Сеты")]')
     sets_table = (By.XPATH, '//h1[contains(text(), "Настройка сетов")]')
     btn_try = (By.CSS_SELECTOR, '[class="btn btn-warning"]')
@@ -39,15 +40,12 @@ class AdminEventPageLocators:
     btn_add_all_route = (By.XPATH, '(//a[contains(text(), "Общий зачет")])[2]')
     record_pay = (By.CSS_SELECTOR, "td.column-amount_for_pay")
     switch_payment_1 = (By.XPATH, "(//span[contains(@class,'bootstrap-switch-handle-off bootstrap-switch-default')])[1]")
-    result_qualification = (By.XPATH, "(//td[contains(@class, 'column-user-middlename')])[1]")
+    result_qualification = (By.XPATH, '(//*[contains(@class, "bgc-green")])[1]')
     btn_generate_result_final = (By.XPATH, '//button[contains(., "Отправить") and @class="swal2-confirm swal2-styled"]')
     result_final = (By.CSS_SELECTOR, 'tbody > tr')
     event_festival_2024 = (
     By.XPATH, '//td[contains(.,"Фестиваль 2024")]/..//a[@class="btn event_delete btn-error"]')
-    event_festival_2024_yes = (By.XPATH,
-                               '//td[contains(.,"Фестиваль 2024")]/..//span[@class="bootstrap-switch-handle-on bootstrap-switch-success"]')
-    event_festival_2024_no = (By.XPATH,
-                              '//td[contains(.,"Фестиваль 2024")]/..//span[@class="bootstrap-switch-handle-off bootstrap-switch-default"]')
+    event_active = (By.CSS_SELECTOR, '[data-column-selection="active"] label[class="form-switcher"]')
     event_competition_yes = (
     By.XPATH, '//td[contains(.,"competition")]/..//span[@class="bootstrap-switch-handle-on bootstrap-switch-success"]')
     event_competition_no = (
@@ -82,12 +80,12 @@ class AdminEventPageLocators:
     btn_tab_doc = (By.XPATH, '//button[contains(text(), "Положение")]')
     btn_tab_afisha = (By.XPATH, '//button[contains(text(), "Афиша")]')
     title_admin = (By.XPATH, '//h1[contains(text(), "Главная")]')
-    title_success_create = (By.XPATH, '//*[contains(text(), "Сохранено")]')
+    title_success_create = (By.XPATH, '(//div[contains(., "Сохранено")])[2]')
     image = (By.XPATH, '(//input[@type="file"])[1]')
     description_text_area = (By.XPATH, '//*[contains(@class, \'note-editable\')]')
     classic_radio_btn = (By.XPATH, '//*[contains(@class, "is_france_system_qualification0")]')
     france_system_radio_btn = (By.XPATH, '//*[contains(@class, "is_france_system_qualification1")]')
     all_route_radio_btn = (By.XPATH, '//div[contains(@class, \'mode2\')]')
     btn_add_category = (By.CSS_SELECTOR, '//button[contains(., "Добавить")]')
-    field_category_1 = (By.XPATH, "(//input[contains(@name, 'categories[values][]')])[1]")
-    field_category_2 = (By.XPATH, "(//input[contains(@name, 'categories[values][]')])[2]")
+    field_category_1 = (By.CSS_SELECTOR, '[name="categories[1][category]"]')
+    field_category_2 = (By.CSS_SELECTOR, '[name="categories[2][category]"]')
