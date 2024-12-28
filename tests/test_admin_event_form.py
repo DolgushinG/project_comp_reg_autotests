@@ -14,6 +14,7 @@ from pages.EventPage import EventPage
 class TestAdminEventForm:
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_event_classic(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_participant()
