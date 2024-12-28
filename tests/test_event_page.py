@@ -9,7 +9,7 @@ from pages.EventPage import EventPage
 
 @pytest.mark.usefixtures("driver")
 class TestEvent:
-    add_url = "/event/1"
+    add_url = "/event/37"
     @pytest.mark.event
     def test_open_event(self):
         event_form = EventPage(self.driver)
