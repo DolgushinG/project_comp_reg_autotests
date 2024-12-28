@@ -14,7 +14,7 @@ from pages.EventPage import EventPage
 class TestAdminEventForm:
 
     @pytest.mark.admin
-    def test_event_classic(self, login_to_admin, delete_event):
+    def test_event_classic(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_btn_tab_participant()
         admin_event_form.click_to('Добавить', 'a', index=6)
@@ -22,6 +22,11 @@ class TestAdminEventForm:
         admin_event_form.click_to('Добавить', 'a', index=6)
         admin_event_form.fill_field_dinamic(field='[name="categories[2][category]"]', type=By.CSS_SELECTOR, value="Общий зачет")
         admin_event_form.click_btn_submit()
+        admin_event_form.click_to('Соревнования', 'a')
+        time.sleep(2)
+        admin_event_form.delete_index_event()
+        time.sleep(2)
+        admin_event_form.activate_event()
 
 
     @pytest.mark.admin
@@ -129,6 +134,7 @@ class TestAdminEventForm:
         admin_event_form.click_to('Соревнования', 'a')
         time.sleep(2)
         admin_event_form.delete_index_event()
+        time.sleep(1)
         admin_event_form.activate_event()
 
     @pytest.mark.admin
