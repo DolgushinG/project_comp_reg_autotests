@@ -248,7 +248,9 @@ class AdminEventPage(BasePage):
 
     def activate_event(self):
         time.sleep(1)
-        self.wait_and_click(AdminEventPageLocators.event_active)
+        self.try_wait_element(AdminEventPageLocators.event_active)
+        if self.element_visible(AdminEventPageLocators.event_active):
+            self.wait_and_click(AdminEventPageLocators.event_active)
 
     def activate_old_event(self):
         time.sleep(1)
