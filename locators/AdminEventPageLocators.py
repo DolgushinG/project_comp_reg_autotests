@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
-    btn_delete_event = (By.CSS_SELECTOR, '[data-async-method="DELETE"]')
+    btn_delete_event = (By.XPATH, "//td[span[text()='Фестиваль 2024']]/following-sibling::td//a[@class='btn event_delete btn-error']")
     btn_nav_set = (By.XPATH, '//*[contains(text(), "Сеты")]')
     sets_table = (By.XPATH, '//h1[contains(text(), "Настройка сетов")]')
     btn_try = (By.CSS_SELECTOR, '[class="btn btn-warning"]')
