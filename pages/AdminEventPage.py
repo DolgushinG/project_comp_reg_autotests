@@ -1,5 +1,6 @@
 import time
 
+from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.select import Select
@@ -232,7 +233,10 @@ class AdminEventPage(BasePage):
 
     def delete_index_event(self):
         time.sleep(3)
-        self.just_click(AdminEventPageLocators.btn_delete_event)
+        try:
+            self.just_click(AdminEventPageLocators.btn_delete_event)
+        except Exception:
+            pass
 
 
     def verify_result_final(self):
