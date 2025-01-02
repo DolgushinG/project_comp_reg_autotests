@@ -37,6 +37,10 @@ class BasePage:
             print("Trying to click on the button again")
             self.driver.execute_script("arguments[0].click()", el)
 
+    def just_click(self, element: tuple):
+        el = self.driver.find_element(*element)
+        el.click()
+
     def find_element(self, element: tuple):
         return self.driver.find_element(*element)
 

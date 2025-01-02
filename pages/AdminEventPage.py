@@ -232,7 +232,7 @@ class AdminEventPage(BasePage):
 
     def delete_index_event(self):
         time.sleep(3)
-        self.click(AdminEventPageLocators.btn_delete_event)
+        self.just_click(AdminEventPageLocators.btn_delete_event)
 
 
     def verify_result_final(self):
