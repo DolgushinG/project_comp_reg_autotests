@@ -24,7 +24,7 @@ class EventPageLocators:
     btn_main_info = (By.XPATH, '//button[contains(text(), \'Общая информация\')]')
     btn_sets = (By.XPATH, "//button[contains(., 'Сеты')]")
     btn_rules = (By.XPATH, '//button[contains(., \'Положение\')]')
-    btn_price = (By.XPATH, '//button[contains(., \'Стартовый взнос\')]')
+    btn_price = (By.XPATH, '//button[contains(., \'Оплата и страховка\')]')
     btn_list_participant = (By.XPATH, '//a[contains(., \'Список участников\')]')
     btn_qualification_results = (By.XPATH, '//a[contains(., \'Предварительные результаты\')]')
     qualification_results = (By.XPATH, '//h5[contains(., \'Мужчины\')]')
