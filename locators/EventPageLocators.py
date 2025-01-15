@@ -30,7 +30,7 @@ class EventPageLocators:
     qualification_results = (By.XPATH, '//h5[contains(., \'Мужчины\')]')
     list_participants = (By.ID, 'borderedTabJustified')
     select_category = (By.ID, 'floatingSelectCategory')
-    select_category_group = (By.ID, 'category_id')
+    select_category_group = (By.ID, 'uniqid_category_id')
     select_sets = (By.ID, 'floatingSelect')
     select_changed_sets = (By.ID, 'floatingSelectChangeSet')
     btn_change_set = (By.ID, 'btn-participant-change-set')
