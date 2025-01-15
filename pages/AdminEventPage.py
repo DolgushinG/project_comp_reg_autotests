@@ -1,5 +1,6 @@
 import time
 
+from psycopg2.extras import wait_select
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
@@ -210,7 +211,7 @@ class AdminEventPage(BasePage):
         self.wait_and_click(AdminEventPageLocators.btn_add_all_route)
 
     def go_to_setting_routes(self):
-        self.wait_and_click(AdminEventPageLocators.nav_setting_routes)
+        self.wait_and_click(AdminEventPageLocators.btn_setting_route)
 
     def verify_setting_routes(self):
         self.wait_element(AdminEventPageLocators.title_setting_routes)
@@ -360,7 +361,17 @@ class AdminEventPage(BasePage):
         self.wait_element(AdminEventPageLocators.sets_table)
 
     def go_to_sets(self):
-        self.wait_and_click(AdminEventPageLocators.btn_nav_set)
+        self.wait_and_click(AdminEventPageLocators.btn_setting_sets)
 
     def click_btn_delete_event(self):
         self.wait_and_click(AdminEventPageLocators.btn_delete_event)
+
+    def open_select_setting(self):
+        self.wait_and_click(AdminEventPageLocators.btn_setting)
+        time.sleep(1)
+
+    def go_to_setting_participant(self):
+        self.wait_and_click(AdminEventPageLocators.btn_setting_participant)
+
+    def verify_setting_participant(self):
+        self.element_visible(AdminEventPageLocators.title_setting_participant)

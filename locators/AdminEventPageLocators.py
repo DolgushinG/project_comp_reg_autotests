@@ -2,6 +2,11 @@ from selenium.webdriver.common.by import By
 
 
 class AdminEventPageLocators:
+    title_setting_participant = (By.XPATH, '//h1[contains(text(), "Настройка участников и особенности их регистрации")]')
+    btn_setting = (By.XPATH, '(//span[contains(text(), "Настройка")])[1]')
+    btn_setting_participant = (By.XPATH, '(//span[contains(text(), "Настройка участников")])[1]')
+    btn_setting_sets = (By.XPATH, '(//span[contains(text(), "Настройка сетов")])[1]')
+    btn_setting_route = (By.XPATH, '(//span[contains(text(), "Настройка трасс")])[1]')
     btn_delete_event = (By.XPATH, "//td[span[text()='Фестиваль 2024']]/following-sibling::td//a[@class='btn event_delete btn-error']")
     btn_nav_set = (By.XPATH, '//*[contains(text(), "Сеты")]')
     sets_table = (By.XPATH, '//h1[contains(text(), "Настройка сетов")]')
