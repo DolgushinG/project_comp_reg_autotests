@@ -1,14 +1,11 @@
 import time
 
-from psycopg2.extras import wait_select
-from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.select import Select
 
 from locators.AdminEventPageLocators import AdminEventPageLocators
 from locators.EventPageLocators import EventPageLocators
-from locators.RegistrationFormLocators import RegistrationForm
 from pages.BasePage import BasePage
 
 
