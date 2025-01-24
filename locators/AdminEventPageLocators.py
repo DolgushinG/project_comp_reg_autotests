@@ -56,6 +56,9 @@ class AdminEventPageLocators:
     event_competition_no = (
     By.XPATH, '//td[contains(.,"competition")]/..//span[@class="bootstrap-switch-handle-off bootstrap-switch-default"]')
     nav_pay = (By.XPATH, '//span[contains(text(), "Финансы")]')
+    nav_pay_service = (By.XPATH, '//span[contains(text(), "Оплата за сервис")]')
+    nav_pay_pay_waiting = (By.XPATH, '//span[contains(text(), "Ожидают оплаты")]')
+    nav_pay_paid = (By.XPATH, '//span[contains(text(), "Оплаченные")]')
     is_semifinal = (By.XPATH, '(//div[@id="is_semifinal"])[1]')
     is_not_semifinal = (By.XPATH, '(//div[@id="is_semifinal"])[2]')
     title_final = (By.XPATH, '//h1[contains(text(), "Финал")]')
@@ -72,6 +75,8 @@ class AdminEventPageLocators:
     title_events = (By.XPATH, '//h1[contains(text(), "Соревнования")]')
     nav_events = (By.XPATH, '//*[contains(text(), "Соревнования")]')
     title_pay = (By.XPATH, '//h1[contains(text(), "Оплата за сервис")]')
+    title_pay_waiting = (By.XPATH, '//h1[contains(text(), "Статусы оплаты у участников ")]')
+    title_paid_confirmed = (By.XPATH, '//h1[contains(text(), "Статусы оплаты у участников")]')
     title_main = (By.XPATH, '//h1[contains(text(), "Главная")]')
     nav_main = (By.XPATH, "//span[contains(text(), \"Главная\") and @class='menu-inner-text']")
     user_name = (By.CSS_SELECTOR, 'input[name="username"]')

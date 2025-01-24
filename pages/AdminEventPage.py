@@ -372,3 +372,18 @@ class AdminEventPage(BasePage):
 
     def verify_setting_participant(self):
         self.element_visible(AdminEventPageLocators.title_setting_participant)
+
+    def click_to_pay_waiting(self):
+        self.wait_and_click(AdminEventPageLocators.nav_pay_pay_waiting)
+
+    def verify_pay_waiting(self):
+        self.element_visible(AdminEventPageLocators.title_pay_waiting)
+
+    def click_to_paid_confirmed(self):
+        self.wait_and_click(AdminEventPageLocators.nav_pay_paid)
+
+    def verify_paid_confirmed(self):
+        self.element_visible(AdminEventPageLocators.title_paid_confirmed)
+
+    def click_to_pay_service(self):
+        self.wait_and_click(AdminEventPageLocators.nav_pay_service)
