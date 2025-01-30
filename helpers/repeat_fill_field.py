@@ -1,11 +1,14 @@
-from selenium.webdriver.common.by import By
-from constants import URL
+import time
+
 from pages.AdminEventPage import AdminEventPage
 
 
 def repeat_fill_fields(driver):
     admin_event_form = AdminEventPage(driver)
-    admin_event_form.go_to_url(f'{URL}moon/resource/event-resource/form-page/37')
+    admin_event_form.go_to_events()
+    time.sleep(1)
+    admin_event_form.click_to('Создать соревнование', 'a')
+    time.sleep(1)
     admin_event_form.fill_field_dinamic(field='field-event-resource-6', value="Фестиваль 2024")
     admin_event_form.fill_field_dinamic(field='field-event-resource-7', value="skalodrom")
     admin_event_form.fill_field_dinamic(field='field-event-resource-8', value="Москва")
