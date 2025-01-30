@@ -7,7 +7,7 @@ def repeat_fill_fields(driver):
     admin_event_form = AdminEventPage(driver)
     admin_event_form.go_to_events()
     time.sleep(1)
-    admin_event_form.click_to('Создать соревнование', 'a')
+    admin_event_form.click_to('Создать новое соревнование', 'a')
     time.sleep(1)
     admin_event_form.fill_field_dinamic(field='field-event-resource-6', value="Фестиваль 2024")
     admin_event_form.fill_field_dinamic(field='field-event-resource-7', value="skalodrom")
