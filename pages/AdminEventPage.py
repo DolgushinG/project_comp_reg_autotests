@@ -365,7 +365,7 @@ class AdminEventPage(BasePage):
 
     def open_select_setting(self):
         self.wait_and_click(AdminEventPageLocators.btn_setting)
-        time.sleep(1)
+        time.sleep(2)
 
     def go_to_setting_participant(self):
         self.wait_and_click(AdminEventPageLocators.btn_setting_participant)
