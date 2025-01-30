@@ -45,7 +45,7 @@ class AdminEventPageLocators:
     btn_add_all_route = (By.XPATH, '(//a[contains(text(), "Общий зачет")])[2]')
     record_pay = (By.CSS_SELECTOR, "td.column-amount_for_pay")
     switch_payment_1 = (By.XPATH, "(//span[contains(@class,'bootstrap-switch-handle-off bootstrap-switch-default')])[1]")
-    result_qualification = (By.XPATH, '(//*[contains(@class, "bgc-green")])[1]')
+    result_qualification = (By.XPATH, '(//*[contains(@class, "badge badge-purple")])[1]')
     btn_generate_result_final = (By.XPATH, '//button[contains(., "Отправить") and @class="swal2-confirm swal2-styled"]')
     result_final = (By.CSS_SELECTOR, 'tbody > tr')
     event_festival_2024 = (
