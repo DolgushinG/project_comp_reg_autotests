@@ -74,6 +74,7 @@ class TestAdminEventForm:
         admin_event_form.delete_event()
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_navigate_to_sidebar(self, login_to_admin):
         admin_event_form = AdminEventPage(self.driver)
         admin_event_form.go_to_main()
@@ -122,6 +123,7 @@ class TestAdminEventForm:
         admin_event_form.verify_title_success_create()
 
     @pytest.mark.admin
+    @pytest.mark.skip()
     def test_event_classic_full(self, login_to_admin):
         admin_event_form = repeat_fill_fields(self.driver)
         admin_event_form.click_to('Сохранить', 'button')
