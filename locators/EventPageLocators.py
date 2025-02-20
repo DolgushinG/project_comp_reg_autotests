@@ -26,7 +26,7 @@ class EventPageLocators:
     btn_rules = (By.XPATH, '//button[contains(., \'Положение\')]')
     btn_price = (By.XPATH, '//button[contains(., \'Оплата и страховка\')]')
     btn_list_participant = (By.XPATH, '//a[contains(., \'Список участников\')]')
-    btn_qualification_results = (By.XPATH, '//a[contains(., \'Предварительные результаты\')]')
+    btn_qualification_results = (By.XPATH, '//a[contains(., \'Результаты квалификации\')]')
     qualification_results = (By.XPATH, '//h5[contains(., \'Мужчины\')]')
     list_participants = (By.ID, 'borderedTabJustified')
     select_category = (By.ID, 'floatingSelectCategory')
