@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class EventPageLocators:
+    close_modal = (By.XPATH, '//button[contains(., "Закрыть")]')
     select_sets_group = (By.ID, 'sets1')
     btn_add_participant = (By.ID, 'add-participant')
     title_group_registration = (By.XPATH, '//h1[contains(text(), "Оформление заявки для группы")]')

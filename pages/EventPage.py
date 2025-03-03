@@ -130,3 +130,7 @@ class EventPage(BasePage):
         select = Select(self.driver.find_element(*EventPageLocators.select_sets_group))
         select.select_by_index(2)
 
+    def click_close_modal(self):
+        self.wait_and_click(EventPageLocators.close_modal)
+
+
