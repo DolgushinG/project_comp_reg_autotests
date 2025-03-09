@@ -131,7 +131,7 @@ class EventPage(BasePage):
         select.select_by_index(2)
 
     def click_close_modal(self):
-        self.try_wait_element(EventPageLocators.close_modal, 2)
+        self.try_wait_element(EventPageLocators.close_modal)
         if self.element_visible(EventPageLocators.close_modal):
             self.wait_and_click(EventPageLocators.close_modal)
 
