@@ -36,9 +36,10 @@ class TestRegistrationForm:
         event_form.verify_title_group_registration()
         event_form.scroll_down()
         event_form.click_add_participant()
+
         reg_form.fill_first_name_group(get_user.firstname)
-        reg_form.fill_last_name_group(get_user.lastname)
         reg_form.fill_birthday(get_user.birthday)
+        reg_form.fill_last_name_group(get_user.lastname)
         reg_form.select_gender()
         event_form.select_category_group()
         event_form.select_group_sport_category()

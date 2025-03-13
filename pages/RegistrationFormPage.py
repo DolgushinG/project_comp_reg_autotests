@@ -1,4 +1,5 @@
 import time
+from time import sleep
 
 from locators.RegistrationFormLocators import RegistrationForm
 from pages.BasePage import BasePage
@@ -28,6 +29,7 @@ class RegistrationFormPage(BasePage):
         self.fill_field(RegistrationForm.last_name, last_name)
 
     def fill_birthday(self, birthday: str) -> None:
+        sleep(1)
         self.fill_field(RegistrationForm.birthday, birthday)
 
     def fill_city(self, last_name: str) -> None:
