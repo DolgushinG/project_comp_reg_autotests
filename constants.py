@@ -14,7 +14,7 @@ class User:
     lastname: str = tools.random_word(4, 8) + tools.random_word(4, 8)
     email: str = tools.get_email()
     password: str = "password"
-    birthday: str = "20202905"
+    birthday: str = "2020-05-29"
     team: str = "team"
     city: str = "Москва"
     gender: str = "Male"
