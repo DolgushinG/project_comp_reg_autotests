@@ -32,7 +32,7 @@ class TestRegistrationForm:
         event_form.go_to_url(f'{URL}/')
         event_form.click_event_with_js()
         event_form.click_to_btn_group_registration()
-        event_form.click_close_modal()
+        # event_form.click_close_modal()
         event_form.verify_title_group_registration()
         event_form.scroll_down()
         event_form.click_add_participant()

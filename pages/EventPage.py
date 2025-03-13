@@ -1,4 +1,5 @@
 import time
+from time import sleep
 
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.select import Select
@@ -117,6 +118,7 @@ class EventPage(BasePage):
         assert len(self.find_elements(EventPageLocators.title_analytics)) > 0, f'body analytics not found'
 
     def click_to_btn_group_registration(self):
+        sleep(1)
         self.wait_and_click(EventPageLocators.btn_group_registration)
 
     def verify_title_group_registration(self):
