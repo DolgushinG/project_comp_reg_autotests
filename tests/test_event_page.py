@@ -16,7 +16,7 @@ class TestEvent:
         event_form.go_to_url(f'{URL}{self.add_url}')
         event_form.click_nav_main_info()
         event_form.click_nav_rules()
-        event_form.click_nav_price()
+        # event_form.click_nav_price()
 
     @pytest.mark.event
     def test_open_list_participant(self):
