@@ -29,7 +29,7 @@ class EventPageLocators:
     btn_list_participant = (By.XPATH, '//a[contains(., \'Список участников\')]')
     btn_qualification_results = (By.XPATH, '//a[contains(., \'Результаты квалификации\')]')
     qualification_results = (By.XPATH, '//h5[contains(., \'Мужчины\')]')
-    list_participants = (By.ID, 'borderedTabJustified')
+    list_participants = (By.ID, 'participantsCount')
     select_category = (By.ID, 'floatingSelectCategory')
     select_category_group = (By.ID, 'uniqid_category_id1')
     select_sets = (By.ID, 'floatingSelect')
