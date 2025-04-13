@@ -53,13 +53,17 @@ class ProfilePage(BasePage):
         time.sleep(1)
 
     def fill_firstname(self, firstname: str):
-        self.fill_field(Profile.input_lastname, firstname)
+        self.scroll_up()
+        time.sleep(1)
+        self.fill_field(Profile.input_firstname, firstname)
 
     def fill_lastname(self, lastname: str):
+        time.sleep(1)
         self.fill_field(Profile.input_lastname, lastname)
 
     def click_btn_save(self):
-        self.click(Profile.input_email)
+        # self.click(Profile.input_email)
+        self.scroll_down()
         self.wait_and_click(Profile.btn_save)
 
     def get_info_profile(self) -> dict:

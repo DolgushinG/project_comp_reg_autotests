@@ -81,6 +81,10 @@ class BasePage:
     def get_text(self, element: tuple):
         return self.wait_element(element).text
 
+    def scroll_up(self):
+        # Прокручиваем в самый верх страницы
+        self.driver.execute_script('window.scrollTo(0, 0);')
+
     def scroll_down(self):
         # time.sleep(1)
         pre_scroll_height = self.driver.execute_script('return document.body.scrollHeight;')
